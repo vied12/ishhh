@@ -1,0 +1,50 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+body, html {
+    height: 100%;
+    overflow: auto;
+}
+
+body {
+    background-image: url('../_MG_3438.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    color: white;
+    font-family: 'Proza Libre', sans-serif;
+    padding-top: 10rem;
+}
+.logo {
+    max-width: 100%;
+}
+.subscribe, .body, footer {
+    position: relative;
+    z-index: 2;
+}
+.subscribe form  {
+    margin: 40px 0;
+}
+.body {
+    font-size: 2rem;
+}
+footer {
+    margin-top: 10rem;
+    /*text-align: right;*/
+}
+
+a, a:hover, a:active, a:visited {
+    color: white;
+}
+b { font-size: 2.5rem;}
+p {
+    margin-bottom: 2rem;
+}
+.follow-us {
+    font-size: 3rem;
+}
