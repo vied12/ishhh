@@ -35,7 +35,6 @@ body {
 }
 footer {
     margin-top: 10rem;
-    /*text-align: right;*/
 }
 
 a, a:hover, a:active, a:visited {
@@ -47,4 +46,38 @@ p {
 }
 .follow-us {
     font-size: 3rem;
+}
+
+@media screen and (min-width: 800px) {
+    body:before {
+        content: '';
+        background-image: url('../_MG_3438.jpg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        max-width: 600px;
+    }
+    .marge {
+        width: 50%;
+        max-width: 600px;
+        height: 100%;
+        flex-shrink: 0;
+    }
+    .wrapper {
+        max-width: 800px;
+    }
+    body {
+        background-image: none;
+        padding: 0;
+        overflow: visible;
+        display: flex;
+    }
+    body, .body, a, a:hover, a:active, a:visited {
+        color: #222222;
+    }
 }
