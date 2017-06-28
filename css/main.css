@@ -12,7 +12,7 @@ body, html {
 }
 
 body {
-    background-image: url('../_MG_3438.jpg');
+    background-image: url('../_MG_3438_darker.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -40,12 +40,13 @@ footer {
 a, a:hover, a:active, a:visited {
     color: white;
 }
-b { font-size: 2.5rem;}
+b { font-size: 1.5rem;}
 p {
     margin-bottom: 2rem;
 }
 .follow-us {
     font-size: 3rem;
+    white-space: nowrap;
 }
 
 @media screen and (min-width: 800px) {
@@ -69,7 +70,10 @@ p {
         flex-shrink: 0;
     }
     .wrapper {
-        max-width: 800px;
+        max-width: 900px;
+    }
+    .container-fluid {
+        margin: 0;
     }
     body {
         background-image: none;
