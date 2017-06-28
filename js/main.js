@@ -16,3 +16,16 @@ function translateY(backgrounds, value) {
 }
 
 window.addEventListener('scroll', updatePosition, false);
+
+const images = [
+    'MG_3438.jpg',
+    'MG_3560.jpg',
+    'MG_3241.jpg',
+]
+var index = 0
+function changeImage() {
+    var margeBkg = $('.marge-background')
+    margeBkg.fadeOut(1000, () => margeBkg.css('backgroundImage', `url(../${images[index]})`).fadeIn(5000))
+    index = (index + 1) % images.length
+}
+setInterval(changeImage, 10000)

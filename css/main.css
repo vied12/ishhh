@@ -63,7 +63,7 @@ h1 {
     margin: 40px 0;
 }
 .body {
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 footer {
     margin-top: 5rem;
@@ -81,7 +81,7 @@ p {
 }
 
 @media screen and (min-width: 800px) {
-    body:before {
+    /*body:before {
         content: '';
         background-image: url('../MG_3241.jpg');
         background-repeat: no-repeat;
@@ -93,15 +93,29 @@ p {
         left: 0;
         width: 50%;
         max-width: 600px;
+    }*/
+    body, html {
+        position: relative;
+        height: 100%;
     }
-    .background {
-        background-image: none;
-        height: 0px;
+    .background {height: 0; background-image: none;}
+    .marge-background {
+        background-image: url('../MG_3241.jpg');
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        max-width: 600px;
+        width: 50%;
     }
     .marge {
         width: 50%;
         max-width: 600px;
-        height: 100%;
+        min-height: 100%;
         flex-shrink: 0;
     }
     .wrapper {
