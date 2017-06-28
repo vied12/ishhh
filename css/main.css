@@ -20,6 +20,9 @@ body {
     font-family: 'Proza Libre', sans-serif;
     padding-top: 40rem;
 }
+h1 {
+    margin: 40px 0;
+}
 .logo {
     max-width: 100%;
 }
@@ -27,7 +30,7 @@ body {
     position: relative;
     z-index: 2;
 }
-.subscribe form  {
+.subscribe {
     margin: 40px 0;
 }
 .body {
