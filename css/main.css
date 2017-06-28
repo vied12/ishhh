@@ -12,7 +12,7 @@ body, html {
 }
 
 body {
-    background-image: url('../_MG_3438_darker.jpg');
+    background-image: url('../MG_3438_darker.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -52,7 +52,7 @@ p {
 @media screen and (min-width: 800px) {
     body:before {
         content: '';
-        background-image: url('../_MG_3438.jpg');
+        background-image: url('../MG_3438.jpg');
         background-repeat: no-repeat;
         background-position: center top;
         background-size: cover;
