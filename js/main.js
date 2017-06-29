@@ -25,7 +25,9 @@ const images = [
 var index = 0
 function changeImage() {
     var margeBkg = $('.marge-background')
-    margeBkg.fadeOut(1000, () => margeBkg.css('backgroundImage', `url(../${images[index]})`).fadeIn(5000))
-    index = (index + 1) % images.length
+    margeBkg.fadeOut(1000, () => {
+        margeBkg.css('backgroundImage', `url(../${images[index]})`).fadeIn(5000)
+        index = (index + 1) % images.length
+    })
 }
 setInterval(changeImage, 10000)
