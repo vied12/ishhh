@@ -20,6 +20,8 @@ body {
     font-family: 'Proza Libre', sans-serif;
     padding-top: 40rem;
     background-color: #e94c45;
+    transition-property: all;
+    transition-duration: 5s;
 }
 .background {
     position: absolute;
@@ -28,7 +30,6 @@ body {
     right: 0;
     bottom: 0;
     background-image: url('../MG_3438_darker.jpg');
-    /*background-attachment: fixed;*/
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -45,7 +46,18 @@ body {
     bottom: 300%;
     height: 100%;
 }
-
+.background4 {
+    background-image: url('../MG_3345.jpg');
+    top: 300%;
+    bottom: 400%;
+    height: 100%;
+}
+.background5 {
+    background-image: url('../MG_3518.jpg');
+    top: 400%;
+    bottom: 500%;
+    height: 100%;
+}
 h1 {
     margin-top: 11px;
 }
@@ -54,6 +66,7 @@ h1 {
     max-width: 100%;
     position: relative;
     z-index: 1;
+    height: 180px;
 }
 .subscribe, .body, footer {
     position: relative;
@@ -81,19 +94,6 @@ p {
 }
 
 @media screen and (min-width: 800px) {
-    /*body:before {
-        content: '';
-        background-image: url('../MG_3241.jpg');
-        background-repeat: no-repeat;
-        background-position: center top;
-        background-size: cover;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 50%;
-        max-width: 600px;
-    }*/
     body, html {
         position: relative;
         height: 100%;
@@ -130,7 +130,9 @@ p {
         overflow: visible;
         display: flex;
     }
-    body, .body, a, a:hover, a:active, a:visited {
+    body, a, a:hover, a:active, a:visited {
+        transition-property: all;
+        transition-duration: 3s;
         color: white;
     }
 }
