@@ -19,7 +19,6 @@ body {
     color: white;
     font-family: 'Proza Libre', sans-serif;
     padding-top: 40rem;
-    background-color: #e94c45;
     transition-property: all;
     transition-duration: 5s;
 }
@@ -66,7 +65,6 @@ h1 {
     max-width: 100%;
     position: relative;
     z-index: 1;
-    height: 180px;
 }
 .subscribe, .body, footer {
     position: relative;
@@ -121,10 +119,14 @@ p {
     .wrapper {
         max-width: 900px;
     }
+    .logo {
+        height: 180px;
+    }
     .container-fluid {
         margin: 0;
     }
     body {
+        background-color: #e94c45;
         background-image: none;
         padding: 0;
         overflow: visible;
