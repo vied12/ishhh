@@ -49,4 +49,15 @@ function changeImage() {
         index = (index + 1) % images.length
     })
 }
+
+function preload(arrayOfImages) {
+    console.log(arrayOfImages)
+    arrayOfImages.forEach(function(url){
+        var img = $('<img/>').attr('src', url).appendTo('body').css({
+            opacity: 0,
+            position: 'absolute',
+        })
+    });
+}
+preload(images.map((image) => (image.logo)))
 setInterval(changeImage, 10000)
