@@ -41,11 +41,11 @@ function changeImage() {
     $('body, a, a:hover, a:active, a:visited').css({
         color: images[index].text || 'white',
     })
+    $('body').css({
+        backgroundColor: images[index].color,
+    })
     margeBkg.fadeOut(1000, () => {
         margeBkg.css('backgroundImage', `url(../${images[index].img})`).fadeIn(5000)
-        $('body').css({
-            backgroundColor: images[index].color,
-        })
         index = (index + 1) % images.length
     })
 }
