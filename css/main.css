@@ -19,8 +19,10 @@ body {
     color: white;
     font-family: 'Proza Libre', sans-serif;
     padding-top: 40rem;
+    -webkit-transition-property: all;
     transition-property: all;
-    transition-duration: 5s;
+    -webkit-transition-duration: 5s;
+            transition-duration: 5s;
 }
 .background {
     position: absolute;
@@ -114,7 +116,8 @@ p {
         width: 50%;
         max-width: 600px;
         min-height: 100%;
-        flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
     }
     .wrapper {
         max-width: 900px;
@@ -130,11 +133,15 @@ p {
         background-image: none;
         padding: 0;
         overflow: visible;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
     }
     body, a, a:hover, a:active, a:visited {
+        -webkit-transition-property: all;
         transition-property: all;
-        transition-duration: 3s;
+        -webkit-transition-duration: 3s;
+                transition-duration: 3s;
         color: white;
     }
 }

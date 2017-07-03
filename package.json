@@ -1,0 +1,25 @@
+{
+  "name": "ishhh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "python -m SimpleHTTPServer",
+    "css": "postcss css/main.css --use autoprefixer --replace --no-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vied12/ishhh.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vied12/ishhh/issues"
+  },
+  "homepage": "https://github.com/vied12/ishhh#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "postcss-cli": "^4.1.0"
+  }
+}
