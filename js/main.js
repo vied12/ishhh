@@ -51,13 +51,18 @@ function changeImage() {
 }
 
 function preload(arrayOfImages) {
-    console.log(arrayOfImages)
+    var container = $('<div/>')
     arrayOfImages.forEach(function(url){
-        var img = $('<img/>').attr('src', url).appendTo('body').css({
-            opacity: 0,
-            position: 'absolute',
-        })
+        var img = $('<img/>').attr('src', url).appendTo(container)
     });
+    $(container).appendTo('body').css({
+        opacity: 0,
+        height: 0,
+        width: 0,
+        overflow: 'hidden',
+    })
 }
-preload(images.map((image) => (image.logo)))
+if (!isMobile()) {
+    preload([...images.map((image) => (image.img)), ...images.map((image) => (image.logo))])
+}
 setInterval(changeImage, 10000)

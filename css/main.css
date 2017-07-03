@@ -4,17 +4,9 @@
    Author's custom styles
    ========================================================================== */
 
-
-
-body, html {
-    /*height: 100%;
-    overflow: hidden;*/
-}
-html {
-}
-
 body {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     height: 100%;
     color: white;
     font-family: 'Proza Libre', sans-serif;
