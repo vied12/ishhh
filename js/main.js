@@ -1,18 +1,16 @@
 function updatePosition() {
-  var backgrounds = $('.background')
+  var background = $('.background')[0]
   var newPos = window.pageYOffset / 2;
-  translateY(backgrounds, newPos);
+  translateY(background, newPos);
 }
 
-function translateY(backgrounds, value) {
+function translateY(background, value) {
   var translate = 'translateY(' + value + 'px)';
-  backgrounds.each(function(elm) {
-      this.style['-webkit-transform'] = translate;
-      this.style['-moz-transform'] = translate;
-      this.style['-ms-transform'] = translate;
-      this.style['-o-transform'] = translate;
-      this.style.transform = translate;
-  })
+      background.style['-webkit-transform'] = translate;
+      background.style['-moz-transform'] = translate;
+      background.style['-ms-transform'] = translate;
+      background.style['-o-transform'] = translate;
+      background.style.transform = translate;
 }
 
 window.addEventListener('scroll', updatePosition, false);

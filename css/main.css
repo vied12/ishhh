@@ -9,6 +9,7 @@ body {
     overflow-x: hidden;
     height: 100%;
     color: white;
+    background-color: black;
     font-family: 'Proza Libre', sans-serif;
     padding-top: 40rem;
     -webkit-transition-property: all;
@@ -22,34 +23,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../MG_3438_darker.jpg');
+}
+.background > div {
+    height: 100%;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
-}
-.background2 {
-    background-image: url('../MG_3241.jpg');
-    top: 100%;
-    bottom: 200%;
-    height: 100%;
-}
-.background3 {
-    background-image: url('../MG_3560.jpg');
-    top: 200%;
-    bottom: 300%;
-    height: 100%;
-}
-.background4 {
-    background-image: url('../MG_3345.jpg');
-    top: 300%;
-    bottom: 400%;
-    height: 100%;
-}
-.background5 {
-    background-image: url('../MG_3518.jpg');
-    top: 400%;
-    bottom: 500%;
-    height: 100%;
 }
 h1 {
     margin-top: 11px;
@@ -66,9 +45,6 @@ h1 {
 }
 .subscribe {
     margin: 40px 0;
-}
-.body {
-    /*font-size: 2rem;*/
 }
 footer {
     margin-top: 5rem;
@@ -91,6 +67,7 @@ p {
         height: 100%;
     }
     .background {height: 0; background-image: none;}
+    .background > div {height: 0; background-image: none;}
     .marge-background {
         background-image: url('../MG_3241.jpg');
         background-repeat: no-repeat;
