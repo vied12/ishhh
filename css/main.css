@@ -60,6 +60,11 @@ p {
 .follow-us {
     white-space: nowrap;
 }
+.etsy {
+  font-size: 2em;
+  background-color: white;
+  padding: 0px 2px;
+}
 
 @media screen and (min-width: 800px) {
     body, html {
