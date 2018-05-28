@@ -12,15 +12,15 @@ const styles = ({
     marginBottom: 160,
   },
   logoContainer: {
-    height: '40vh',
-    padding: '10vh',
+    height: '30vh',
+    padding: '5vh',
     boxSizing: 'border-box',
   },
   logo: {
     maxHeight: '100%',
   },
   images: {
-    height: '60vh',
+    height: '70vh',
     display: 'flex',
     '& img': {
       objectFit: 'cover',
@@ -36,11 +36,22 @@ class Header extends React.Component {
   }
 
   componentDidMount = () => {
-    this.changeInterval = setInterval(this.changeImage, 4000)
+    this.startInterval()
   }
 
-  changeImage = () => {
+  nextImage = () => {
     this.setState({ imageIndex: (this.state.imageIndex + 3) % pictures.length })
+  }
+
+  startInterval = () => {
+    this.changeInterval = setInterval(this.nextImage, 5000)
+  }
+  resetIntervalAndGoNext = () => {
+    if (this.changeInterval) {
+      clearInterval(this.changeInterval)
+    }
+    this.nextImage()
+    this.startInterval()
   }
 
   render() {
@@ -51,19 +62,32 @@ class Header extends React.Component {
         <div className={classes.logoContainer}>
           <img src={logo} alt="ISHHH" className={classes.logo} />
         </div>
-        <div className={classes.images}>
-          <CrossfadeImage duration={2000} delay={500} src={pictures[(imageIndex + 0) % pictures.length]} style={{ width: '33.33%'}} imgStyle={{width: '100%', height: '100%'}} />
+        <div className={classes.images} onClick={this.resetIntervalAndGoNext}>
           <CrossfadeImage
             duration={2000}
-            delay={1000}
+            delay={0}
+            src={pictures[(imageIndex + 0) % pictures.length]}
+            style={{ width: '33.33%'}}
+            imgStyle={{ width: '100%', height: '100%' }}
+          />
+          <CrossfadeImage
+            duration={2000}
+            delay={500}
             src={pictures[(imageIndex + 1) % pictures.length]}
             style={{
               width: '33.33%',
               borderLeft: '10px solid white',
               borderRight: '10px solid white',
             }}
-              imgStyle={{width: '100%', height: '100%'}} />
-          <CrossfadeImage duration={2000} delay={1500} src={pictures[(imageIndex + 2) % pictures.length]} style={{ width: '33.33%'}} imgStyle={{width: '100%', height: '100%'}} />
+            imgStyle={{ width: '100%', height: '100%' }}
+          />
+          <CrossfadeImage
+            duration={2000}
+            delay={1000}
+            src={pictures[(imageIndex + 2) % pictures.length]}
+            style={{ width: '33.33%' }}
+            imgStyle={{ width: '100%', height: '100%' }}
+          />
         </div>
       </header>
     )
