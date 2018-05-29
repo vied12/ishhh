@@ -12,6 +12,7 @@ const styles = ({
     display: 'flex',
     // flexWrap: 'wrap',
     justifyContent: 'center',
+    boxShadow: [0, 0, 10, 'rgba(0, 0, 0, .5)'],
   },
   gridItem: {
     transition: 'all .75s',

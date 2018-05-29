@@ -6,6 +6,7 @@ import InstagramEmbed from 'react-instagram-embed'
 import withStyle from 'react-jss'
 import 'typeface-ibm-plex-sans'
 import Grid from '@material-ui/core/Grid'
+import { Typography } from '@material-ui/core'
 
 const styles = ({
   root: {
@@ -36,18 +37,10 @@ class Home extends Component {
         <div  style={{margin: 40 }}>
           <Grid container alignItems="center" spacing={16}>
             <Grid item xs={12} sm={6} md={9}>
-              <p>
-                Clothes with urban and Indian inspirations
-              </p>
-              <p>
-                Come visit our store in Dunkel Blau fast Schwarz, Rykestraße 16. Prenzlauerberg Berlin
-              </p>
-              <p>
-              Original and exclusive collection<br />
-              Indian fabric and cotton (lining and skirt: 100% cotton)<br />
-
-              Sizes S/M and M/L available (can be customized on demand)<br />
-              </p>
+              <Typography style={{ maxWidth: 600, margin: '0 auto' }}>
+                I found inspiration in the indian colours and patterns, elegant sarees and gold jewelries. I like to mix those fabrics with actual designs.<br />
+                I enjoy the contrast between the urban cities, grey, the tar and the asphalt, moderns buildings with colorful, golden  and “traditionals” fabrics.
+              </Typography>
             </Grid>
             <Grid item xs={12} sm={6} md={3}>
               <InstagramEmbed

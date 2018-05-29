@@ -99,6 +99,7 @@ class Header extends React.Component {
             src={pictures[(imageIndex + 1) % pictures.length]}
             style={{
               width: '33.33%',
+              top: 25,
               borderLeft: '10px solid white',
               borderRight: '10px solid white',
             }}
