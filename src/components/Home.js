@@ -2,29 +2,22 @@ import React, { Component } from 'react'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
 import Pictures from 'components/Pictures'
-import InstagramEmbed from 'react-instagram-embed'
 import withStyle from 'react-jss'
-import 'typeface-ibm-plex-sans'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
+import { pictures, previousCollection } from 'pictures'
 
 const styles = ({
   root: {
-    textAlign: 'center',
-    fontFamily: '\'IBM Plex Sans\', sans-serif',
-    '& p': {
-      fontSize: '1.6rem',
-    }
+  },
+  containerWithMargin: {
+    margin: 40,
+    marginTop: 100,
   },
   embed: {
     '& iframe': {
       margin: 'auto !important'
     },
-  },
-  logo: {
-    maxWidth: '40vw',
-    width: 500,
-    marginBottom: 60,
   },
 })
 
@@ -34,26 +27,30 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <Header />
-        <div  style={{margin: 40 }}>
-          <Grid container alignItems="center" spacing={16}>
-            <Grid item xs={12} sm={6} md={9}>
-              <Typography style={{ maxWidth: 600, margin: '0 auto' }}>
+        <div  className={classes.containerWithMargin}>
+          <Typography variant="display3" gutterBottom>Intro</Typography>
+          <Grid container spacing={40}>
+            <Grid item xs={12} md={3}>
+              <img alt="The creator, Carmen, in Inda" src="https://scontent-amt2-1.cdninstagram.com/vp/1e08c3a8171d9030d4eec7838acaba9e/5BBA0FDA/t51.2885-15/e35/28433875_199108660850235_1003813657567559680_n.jpg" style={{width: '100%'}}/>
+            </Grid>
+            <Grid item xs={12} md={7}>
+              <Typography style={{ maxWidth: 600, fontSize: '1.6rem' }}>
                 I found inspiration in the indian colours and patterns, elegant sarees and gold jewelries. I like to mix those fabrics with actual designs.<br />
                 I enjoy the contrast between the urban cities, grey, the tar and the asphalt, moderns buildings with colorful, golden  and “traditionals” fabrics.
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <InstagramEmbed
-                url="https://www.instagram.com/p/Bi-DVDGBaDY"
-                maxWidth={300}
-                hideCaption
-                className={classes.embed}
 
-              />
-            </Grid>
           </Grid>
         </div>
-        <Pictures />
+        <div  className={classes.containerWithMargin}>
+          <Typography variant="display3">The new collection</Typography>
+        </div>
+        <Pictures pictures={pictures} />
+        <div className={classes.containerWithMargin}>
+          <Typography variant="display3">Previous collection</Typography>
+          <Typography variant="caption">Indian fabric and cotton (lining and skirt: 100% cotton)</Typography>
+        </div>
+        <Pictures pictures={previousCollection} />
         <Footer />
       </div>
     )

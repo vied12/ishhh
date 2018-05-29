@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import { pictures } from 'pictures'
 import withStyle from 'react-jss'
 
 const styles = ({
   root: {
-    marginTop: 100,
-    marginBottom: 100,
-    padding: 40,
-    paddingTop: 80,
+    marginTop: 20,
+    marginBottom: 150,
+    paddingTop: 60,
+    paddingBottom: 60,
     backgroundColor: 'tomato',
     display: 'flex',
-    // flexWrap: 'wrap',
     justifyContent: 'center',
     boxShadow: [0, 0, 10, 'rgba(0, 0, 0, .5)'],
   },
@@ -19,14 +17,13 @@ const styles = ({
     '&:hover': {
       flexShrink: 0,
     },
-    marginBottom: 40,
-    marginRight: 0,
-    // width: 300,
-    height: 300,
+    height: '50vh',
+    position: 'relative',
     '& img': {
-      width: '100%',
-      height: '100%',
-      // borderRadius: 20,
+      maxWidth: '100%',
+      maxHeight: '100%',
+      minWidth: '100%',
+      minHeight: '100%',
       objectFit: 'cover',
       boxShadow: [0, 0, 25, 'rgba(0, 0, 0, 0.2)']
     }
@@ -36,12 +33,12 @@ const styles = ({
 class Pictures extends Component {
 
   render() {
-    const { classes } = this.props
+    const { classes, pictures, } = this.props
     return (
       <div className={classes.root}>
         {pictures.map(((src, i) => (
           <div className={classes.gridItem} key={src}>
-            <img src={src} alt="ISHHH" />
+            <img src={src} alt={src} />
           </div>
         )))}
       </div>

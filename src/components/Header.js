@@ -6,6 +6,9 @@ import logo from 'images/ishhh-NB-MD.png'
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import Button from '@material-ui/core/Button'
 
+const goDownAnimationId = 'goDownAnimationId' + Math.floor(Math.random() * Math.pow(10, 10))
+const rotateId = 'rotateId' + Math.floor(Math.random() * Math.pow(10, 10))
+
 const styles = ({
   root: {
     minHeight: '100vh',
@@ -17,16 +20,19 @@ const styles = ({
     height: '30vh',
     padding: '5vh',
     boxSizing: 'border-box',
+    textAlign: 'center',
   },
   logo: {
     maxHeight: '100%',
+    animation: `${rotateId} 5s infinite`,
+    animationDelay: 2500,
   },
   images: {
     height: '70vh',
     display: 'flex',
     '& img': {
       objectFit: 'cover',
-      objectPosition: '50% 50%',
+      objectPosition: 'top 50%',
     },
   },
   goDown: {
@@ -42,7 +48,27 @@ const styles = ({
     minHeight: 'unset',
     minWidth: 'unset',
     padding: 'unset',
-  }
+    animation: `${goDownAnimationId} 1s infinite`,
+  },
+  [`@keyframes ${goDownAnimationId}`]: {
+    '0%, 100%': {
+      transform: 'translate(0, 25%)',
+    },
+    '50%': {
+      transform: 'translate(0, 0%)',
+    },
+  },
+  [`@keyframes ${rotateId}`]: {
+    '0%, 90%, 100%': {
+      transform: 'scale(1)',
+    },
+    // '95%': {
+    //   transform: 'scale(1.1)',
+    // },
+    '95%': {
+      transform: 'scale(1.05)',
+    },
+  },
 })
 
 class Header extends React.Component {
@@ -99,7 +125,7 @@ class Header extends React.Component {
             src={pictures[(imageIndex + 1) % pictures.length]}
             style={{
               width: '33.33%',
-              top: 25,
+              top: 20,
               borderLeft: '10px solid white',
               borderRight: '10px solid white',
             }}
