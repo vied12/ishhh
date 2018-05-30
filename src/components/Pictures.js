@@ -4,13 +4,10 @@ import withStyle from 'react-jss'
 const styles = ({
   root: {
     marginTop: 20,
-    marginBottom: 150,
     paddingTop: 60,
     paddingBottom: 60,
-    backgroundColor: 'tomato',
     display: 'flex',
     justifyContent: 'center',
-    boxShadow: [0, 0, 10, 'rgba(0, 0, 0, .5)'],
   },
   gridItem: {
     transition: 'all .75s',
@@ -25,7 +22,7 @@ const styles = ({
       minWidth: '100%',
       minHeight: '100%',
       objectFit: 'cover',
-      boxShadow: [0, 0, 25, 'rgba(0, 0, 0, 0.2)']
+      boxShadow: [0, 0, 25, 'rgba(0, 0, 0, 0.3)']
     }
   }
 })

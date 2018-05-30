@@ -11,13 +11,11 @@ const rotateId = 'rotateId' + Math.floor(Math.random() * Math.pow(10, 10))
 
 const styles = ({
   root: {
-    minHeight: '100vh',
     boxSizing: 'border-box',
     position: 'relative',
     marginBottom: 160,
   },
   logoContainer: {
-    height: '30vh',
     padding: '5vh',
     boxSizing: 'border-box',
     textAlign: 'center',
@@ -28,7 +26,6 @@ const styles = ({
     animationDelay: 2500,
   },
   images: {
-    height: '70vh',
     display: 'flex',
     '& img': {
       objectFit: 'cover',
@@ -74,6 +71,7 @@ const styles = ({
 class Header extends React.Component {
   state = {
     imageIndex: 0,
+    height: 0,
   }
 
   componentDidMount = () => {
@@ -103,15 +101,26 @@ class Header extends React.Component {
     })
   }
 
+  componentWillMount = () => {
+    window.addEventListener('resize', this.setHeight)
+    this.setHeight()
+  }
+
+  setHeight = () => {
+    this.setState({ height: window.innerHeight })
+  }
+
+
+
   render() {
     const  { classes } = this.props
-    const  { imageIndex } = this.state
+    const  { imageIndex, height } = this.state
     return (
       <header className={classes.root}>
-        <div className={classes.logoContainer}>
+        <div className={classes.logoContainer} style={{ height: height * 0.3 }}>
           <img src={logo} alt="ISHHH" className={classes.logo} />
         </div>
-        <div className={classes.images} onClick={this.resetIntervalAndGoNext}>
+        <div className={classes.images} onClick={this.resetIntervalAndGoNext}  style={{ height: height * 0.7 }}>
           <CrossfadeImage
             duration={2000}
             delay={0}
