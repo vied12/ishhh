@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
+import AboutMe from 'components/AboutMe'
 import Pictures from 'components/Pictures'
 import withStyle from 'react-jss'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
-import { pictures, previousCollection } from 'pictures'
+import { selection, previousCollection } from 'pictures'
 
 const styles = ({
   root: {
@@ -29,8 +30,9 @@ class Home extends Component {
         <Header />
         <div  className={classes.containerWithMargin}>
           <Typography variant="display3">The new collection 2018</Typography>
+          <Typography variant="caption">Original and exclusive collection, a mix of indian fabrics and sarees with 100% cotton lining, handmade in berlin</Typography>
         </div>
-        <Pictures pictures={pictures} />
+        <Pictures pictures={selection} />
         <div className={classes.containerWithMargin}>
           <Typography variant="display3">Collection 2017</Typography>
           <Typography variant="caption">Indian fabric and cotton (lining and skirt: 100% cotton)</Typography>
@@ -46,10 +48,7 @@ class Home extends Component {
                 style={{width: '100%', borderRadius: 0 }}/>
             </Grid>
             <Grid item xs={12} md={5}>
-              <Typography style={{ maxWidth: 600, fontSize: '1.3rem' }}>
-                I found inspiration in the indian colours and patterns, elegant sarees and gold jewelries. I like to mix those fabrics with actual designs.<br />
-                I enjoy the contrast between the urban cities, grey, the tar and the asphalt, moderns buildings with colorful, golden  and “traditionals” fabrics.
-              </Typography>
+              <AboutMe />
             </Grid>
           </Grid>
         </div>
