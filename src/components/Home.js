@@ -10,6 +10,7 @@ import { selection, previousCollection } from 'pictures'
 
 const styles = ({
   root: {
+    textAlign: 'center',
   },
   containerWithMargin: {
     margin: 40,
@@ -38,8 +39,8 @@ class Home extends Component {
           <Typography variant="caption">Indian fabric and cotton (lining and skirt: 100% cotton)</Typography>
         </div>
         <Pictures pictures={previousCollection} />
-        <div  className={classes.containerWithMargin}>
-            <Typography variant="display3" gutterBottom>About me</Typography>
+        <div className={classes.containerWithMargin} style={{ textAlign: 'left' }}>
+          <Typography variant="display3" gutterBottom>About me</Typography>
           <Grid container spacing={40} style={{ }}>
             <Grid item xs={12} md={3}>
               <img
