@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
 import AboutMe from 'components/AboutMe'
+import Galery from 'components/Galery'
 import Pictures from 'components/Pictures'
 import withStyle from 'react-jss'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
-import { selection, previousCollection } from 'pictures'
+import { selection, previousCollection, catalog } from 'pictures'
 
 const styles = ({
   root: {
@@ -30,10 +31,10 @@ class Home extends Component {
       <div className={classes.root}>
         <Header />
         <div  className={classes.containerWithMargin}>
-          <Typography variant="display3">The new collection 2018</Typography>
+          <Typography variant="display3">Collection 2018</Typography>
           <Typography variant="caption">Original and exclusive collection, a mix of indian fabrics and sarees with 100% cotton lining, handmade in berlin</Typography>
         </div>
-        <Pictures pictures={selection} />
+        <Galery pictures={catalog} />
         <div className={classes.containerWithMargin}>
           <Typography variant="display3">Collection 2017</Typography>
           <Typography variant="caption">Indian fabric and cotton (lining and skirt: 100% cotton)</Typography>
