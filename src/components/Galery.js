@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import CrossfadeImage from 'components/CrossfadeImage'
 import { withStyles } from '@material-ui/core/styles'
+import withWidth from '@material-ui/core/withWidth'
 import Typography from '@material-ui/core/Typography'
-import createTypography from '@material-ui/core/styles/createTypography'
+import Button from '@material-ui/core/Button'
 
 const styles = theme => ({
   root: {
@@ -36,14 +37,30 @@ const styles = theme => ({
     textAlign: 'center',
     padding: 5,
     backgroundColor: 'rgba(255, 255, 255, .7)',
-    '& span': {
+    '& p': {
       color: theme.palette.grey[700],
     },
   },
   title: {
-    textAlign: 'center',
+    // textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    '& > *': {
+      width: '100%',
+      height: '100%',
+      fontSize: '1.2rem',
+    },
   },
 })
+
+const SIZES = {
+  xs: 1,
+  sm: 2,
+  md: 4,
+  lg: 6,
+  xl: 12,
+}
 
 class Galery extends Component {
   state = {
@@ -51,12 +68,13 @@ class Galery extends Component {
   }
 
   render() {
-    const { classes, pictures } = this.props
+    const { classes, pictures, width } = this.props
     return (
       <div className={classes.root}>
         {pictures.map((d, i) => (
           <div
             className={classes.gridItem}
+            style={{ width: `${100 / SIZES[width]}%` }}
             key={d.name}
             onMouseEnter={() => this.setState({ mouseOnPicture: d })}
             onMouseLeave={() => this.setState({ mouseOnPicture: null })}
@@ -73,12 +91,21 @@ class Galery extends Component {
             )}
           </div>
         ))}
-        <div className={[classes.gridItem, classes.title].join(' ')}>
-          <Typography>Contact Me</Typography>
+        <div
+          className={[classes.gridItem, classes.title].join(' ')}
+          style={{ width: `${100 / SIZES[width]}%` }}
+        >
+          <Button
+            color="primary"
+            variant="contained"
+            href="https://m.me/ishhhliebedich"
+          >
+            Contact Me
+          </Button>
         </div>
       </div>
     )
   }
 }
 
-export default withStyles(styles)(Galery)
+export default withWidth()(withStyles(styles)(Galery))

@@ -4,7 +4,7 @@ import Header from 'components/Header'
 import AboutMe from 'components/AboutMe'
 import Galery from 'components/Galery'
 import Pictures from 'components/Pictures'
-import withStyle from 'react-jss'
+import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import { previousCollection, catalog } from 'pictures'
@@ -71,4 +71,4 @@ class Home extends Component {
   }
 }
 
-export default withStyle(styles)(Home)
+export default withStyles(styles)(Home)

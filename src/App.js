@@ -9,6 +9,13 @@ const theme = createMuiTheme({
   typography: {
     fontFamily: "'Open Sans', sans-serif",
   },
+  overrides: {
+    MuiButton: {
+      root: {
+        borderRadius: 0,
+      },
+    },
+  },
 })
 
 const styles = {}

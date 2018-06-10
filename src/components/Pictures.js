@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import withStyle from 'react-jss'
+import { withStyles } from '@material-ui/core/styles'
 
 const styles = {
   root: {
@@ -42,4 +42,4 @@ class Pictures extends Component {
   }
 }
 
-export default withStyle(styles)(Pictures)
+export default withStyles(styles)(Pictures)

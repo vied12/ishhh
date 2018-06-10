@@ -1,5 +1,5 @@
 import React from 'react'
-import withStyle from 'react-jss'
+import { withStyles } from '@material-ui/core/styles'
 import CrossfadeImage from 'components/CrossfadeImage'
 import { pictures } from 'pictures'
 import logo from 'images/ishhh-NB-MD.png'
@@ -38,7 +38,7 @@ const styles = {
     bottom: 0,
     left: 0,
     right: 0,
-    margin: [0, 'auto'],
+    margin: [[0, 'auto']],
     zIndex: 3,
     color: 'white',
     width: 50,
@@ -60,9 +60,6 @@ const styles = {
     '0%, 90%, 100%': {
       transform: 'scale(1)',
     },
-    // '95%': {
-    //   transform: 'scale(1.1)',
-    // },
     '95%': {
       transform: 'scale(1.05)',
     },
@@ -161,4 +158,4 @@ class Header extends React.Component {
   }
 }
 
-export default withStyle(styles)(Header)
+export default withStyles(styles)(Header)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Footer from 'components/Footer'
-import withStyle from 'react-jss'
+import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
 const styles = {
@@ -72,4 +72,4 @@ class Home extends Component {
   }
 }
 
-export default withStyle(styles)(Home)
+export default withStyles(styles)(Home)
