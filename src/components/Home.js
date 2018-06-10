@@ -7,7 +7,10 @@ import Pictures from 'components/Pictures'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
-import { previousCollection, catalog } from 'pictures'
+import { previousCollection } from 'pictures'
+import catalog from 'data'
+import shopImg from 'images/shop.jpg'
+import meImg from 'images/me.jpg'
 
 const styles = {
   root: {
@@ -31,18 +34,17 @@ class Home extends Component {
       <div className={classes.root}>
         <Header />
         <div className={classes.containerWithMargin}>
-          <Typography variant="display3">Collection 2018</Typography>
-          <Typography variant="caption">
-            Original and exclusive collection, a mix of indian fabrics and
-            sarees with 100% cotton lining, handmade in berlin
+          <Typography variant="display3" gutterBottom>
+            Original and exclusive collection
           </Typography>
+          <Typography gutterBottom variant="title">
+            Indian fabrics and sarees with 100% cotton lining
+          </Typography>
+          <Typography variant="title">Homemade in berlin</Typography>
         </div>
         <Galery pictures={catalog} />
         <div className={classes.containerWithMargin}>
           <Typography variant="display3">Collection 2017</Typography>
-          <Typography variant="caption">
-            Indian fabric and cotton (lining and skirt: 100% cotton)
-          </Typography>
         </div>
         <Pictures pictures={previousCollection} />
         <div
@@ -50,17 +52,37 @@ class Home extends Component {
           style={{ textAlign: 'left' }}
         >
           <Typography variant="display3" gutterBottom>
-            About me
+            Find me
           </Typography>
           <Grid container spacing={40} style={{}}>
             <Grid item xs={12} md={3}>
+              <img width="100%" src={shopImg} alt="Shop" />
+            </Grid>
+            <Grid item xs={12} md={9}>
+              <Typography style={{ fontWeight: 400 }}>
+                Dunkel Blau fast Schwarz
+              </Typography>
+              <Typography>Rykestraße 16, Prenzlauer Berg, Berlin</Typography>
+              <Typography>Monday - Friday: 12pm - 7pm</Typography>
+              <Typography>Saturday: 12pm - 6pm</Typography>
+            </Grid>
+          </Grid>
+          <Typography
+            variant="display3"
+            gutterBottom
+            style={{ marginTop: 100 }}
+          >
+            About me
+          </Typography>
+          <Grid container spacing={40}>
+            <Grid item xs={12} md={3}>
               <img
                 alt="The creator, Carmen, in Inda"
-                src="https://scontent-amt2-1.cdninstagram.com/vp/1e08c3a8171d9030d4eec7838acaba9e/5BBA0FDA/t51.2885-15/e35/28433875_199108660850235_1003813657567559680_n.jpg"
+                src={meImg}
                 style={{ width: '100%', borderRadius: 0 }}
               />
             </Grid>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={9}>
               <AboutMe />
             </Grid>
           </Grid>

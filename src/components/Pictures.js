@@ -4,8 +4,6 @@ import { withStyles } from '@material-ui/core/styles'
 const styles = {
   root: {
     marginTop: 20,
-    paddingTop: 60,
-    paddingBottom: 60,
     display: 'flex',
     justifyContent: 'center',
   },

@@ -12,7 +12,7 @@ const styles = {
 
 const AboutMe = ({ classes }) => (
   <div>
-    <Typography style={{ maxWidth: 600, fontSize: '1.3rem' }}>
+    <Typography style={{ maxWidth: 600 }}>
       I found inspiration in the indian colours and patterns, elegant sarees and
       gold jewelries. I like to mix those fabrics with actual designs.<br />
       I enjoy the contrast between the urban cities, grey, the tar and the
