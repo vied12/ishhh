@@ -7,7 +7,7 @@ export default class CrossfadeImage extends Component {
     this.state = {
       topSrc: props.src,
       bottomOpacity: 0,
-      bottomSrc: props.src
+      bottomSrc: props.src,
     }
   }
   componentWillReceiveProps(newProps) {
@@ -35,10 +35,10 @@ export default class CrossfadeImage extends Component {
               if (!this.timeout) clearTimeout(this.timeout)
               this.timeout = setTimeout(
                 () => this.setState({ bottomOpacity: 0 }),
-                20
+                20,
               )
-            }
-          )
+            },
+          ),
         )
       })
     }
@@ -65,7 +65,7 @@ export default class CrossfadeImage extends Component {
             style={{
               ...defaultStyle,
               ...imgStyle,
-              ...{ position: 'absolute' }
+              ...{ position: 'absolute' },
             }}
             src={topSrc}
             alt={alt}
@@ -79,8 +79,8 @@ export default class CrossfadeImage extends Component {
               ...{
                 opacity: bottomOpacity,
                 transition: `opacity ${duration /
-                  1000}s ${timingFunction} ${delay / 1000}s`
-              }
+                  1000}s ${timingFunction} ${delay / 1000}s`,
+              },
             }}
             src={bottomSrc}
             alt={alt}
@@ -99,11 +99,11 @@ CrossfadeImage.propTypes = {
   duration: PropTypes.number,
   timingFunction: PropTypes.string,
   delay: PropTypes.number,
-  style: PropTypes.object
+  style: PropTypes.object,
 }
 
 CrossfadeImage.defaultProps = {
   duration: 500,
   timingFunction: 'ease',
-  delay: 0
+  delay: 0,
 }

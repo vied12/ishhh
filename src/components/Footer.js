@@ -20,15 +20,39 @@ const styles = theme => ({
 })
 const Footer = ({ classes }) => (
   <div className={classes.root}>
-    <Link to="/" component="div"><img src={logo} width={150} alt="ISHHH logo"/></Link>
+    <Link to="/" component="div">
+      <img src={logo} width={150} alt="ISHHH logo" />
+    </Link>
     <Typography variant="body2" className={classes.credits}>
-      Pattern maker/designer: <a href="mailto:loicxgros@gmail.com" rel="nofollow noreferrer">Loïc Gros</a><br />
-      Graphic identity: <a href="http://www.juliaze.com" rel="nofollow noreferrer">Julia Zé</a><br />
-      Model: <a href="https://www.instagram.com/technopussi" rel="nofollow noreferrer">Nikki</a><br />
-      Hair & Make-up artist: <a href="http://adrianametzlaff.de" rel="nofollow noreferrer">Adriana Metzlaff</a><br />
-      Website: <a href="https://vied12.github.io" rel="nofollow noreferrer">Edouard Richard</a><br />
+      Pattern maker/designer:{' '}
+      <a href="mailto:loicxgros@gmail.com" rel="nofollow noreferrer">
+        Loïc Gros
+      </a>
+      <br />
+      Graphic identity:{' '}
+      <a href="http://www.juliaze.com" rel="nofollow noreferrer">
+        Julia Zé
+      </a>
+      <br />
+      Model:{' '}
+      <a href="https://www.instagram.com/technopussi" rel="nofollow noreferrer">
+        Nikki
+      </a>
+      <br />
+      Hair & Make-up artist:{' '}
+      <a href="http://adrianametzlaff.de" rel="nofollow noreferrer">
+        Adriana Metzlaff
+      </a>
+      <br />
+      Website:{' '}
+      <a href="https://vied12.github.io" rel="nofollow noreferrer">
+        Edouard Richard
+      </a>
+      <br />
     </Typography>
-    <Button component={Link} to="/impressum">Impressum</Button>
+    <Button component={Link} to="/impressum">
+      Impressum
+    </Button>
   </div>
 )
 

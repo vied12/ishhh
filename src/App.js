@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Route } from "react-router-dom"
+import { HashRouter as Router, Route } from 'react-router-dom'
 import Home from 'components/Home'
 import Impressum from 'components/Impressum'
 import { withStyles } from '@material-ui/core/styles'
@@ -7,12 +7,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: '\'Open Sans\', sans-serif',
-  }
+    fontFamily: "'Open Sans', sans-serif",
+  },
 })
 
-const styles = ({
-})
+const styles = {}
 
 const App = ({ classes }) => {
   return (

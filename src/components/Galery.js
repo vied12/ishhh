@@ -10,7 +10,7 @@ const styles = theme => ({
     flexWrap: 'wrap',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-    textAlign: 'left'
+    textAlign: 'left',
   },
   gridItem: {
     width: `${100 / 6}%`,
@@ -19,14 +19,14 @@ const styles = theme => ({
     '&:after': {
       content: '""',
       display: 'block',
-      paddingBottom: '100%'
+      paddingBottom: '100%',
     },
     '& img': {
       position: 'absolute',
       width: '100%',
       height: '100%',
-      objectFit: 'cover'
-    }
+      objectFit: 'cover',
+    },
   },
   label: {
     position: 'absolute',
@@ -37,17 +37,17 @@ const styles = theme => ({
     padding: 5,
     backgroundColor: 'rgba(255, 255, 255, .7)',
     '& span': {
-      color: theme.palette.grey[700]
-    }
+      color: theme.palette.grey[700],
+    },
   },
   title: {
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+  },
 })
 
 class Galery extends Component {
   state = {
-    mouseOnPicture: null
+    mouseOnPicture: null,
   }
 
   render() {

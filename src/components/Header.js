@@ -6,10 +6,11 @@ import logo from 'images/ishhh-NB-MD.png'
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import Button from '@material-ui/core/Button'
 
-const goDownAnimationId = 'goDownAnimationId' + Math.floor(Math.random() * Math.pow(10, 10))
+const goDownAnimationId =
+  'goDownAnimationId' + Math.floor(Math.random() * Math.pow(10, 10))
 const rotateId = 'rotateId' + Math.floor(Math.random() * Math.pow(10, 10))
 
-const styles = ({
+const styles = {
   root: {
     boxSizing: 'border-box',
     position: 'relative',
@@ -66,7 +67,7 @@ const styles = ({
       transform: 'scale(1.05)',
     },
   },
-})
+}
 
 class Header extends React.Component {
   state = {
@@ -79,7 +80,9 @@ class Header extends React.Component {
   }
 
   nextImage = () => {
-    this.setState({ imageIndex: (this.state.imageIndex + 3) % pictures.length })
+    this.setState({
+      imageIndex: (this.state.imageIndex + 3) % pictures.length,
+    })
   }
 
   startInterval = () => {
@@ -97,7 +100,7 @@ class Header extends React.Component {
     window.scroll({
       top: window.innerHeight - 50,
       left: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     })
   }
 
@@ -110,22 +113,24 @@ class Header extends React.Component {
     this.setState({ height: window.innerHeight })
   }
 
-
-
   render() {
-    const  { classes } = this.props
-    const  { imageIndex, height } = this.state
+    const { classes } = this.props
+    const { imageIndex, height } = this.state
     return (
       <header className={classes.root}>
         <div className={classes.logoContainer} style={{ height: height * 0.3 }}>
           <img src={logo} alt="ISHHH" className={classes.logo} />
         </div>
-        <div className={classes.images} onClick={this.resetIntervalAndGoNext}  style={{ height: height * 0.7 }}>
+        <div
+          className={classes.images}
+          onClick={this.resetIntervalAndGoNext}
+          style={{ height: height * 0.7 }}
+        >
           <CrossfadeImage
             duration={2000}
             delay={0}
             src={pictures[(imageIndex + 0) % pictures.length]}
-            style={{ width: '33.33%'}}
+            style={{ width: '33.33%' }}
             imgStyle={{ width: '100%', height: '100%' }}
           />
           <CrossfadeImage
@@ -148,15 +153,12 @@ class Header extends React.Component {
             imgStyle={{ width: '100%', height: '100%' }}
           />
         </div>
-        <Button className={classes.goDown}
-          onClick={this.scrollDown}
-        >
-          <KeyboardArrowDown style={{ width: 50, height: 50 }}/>
+        <Button className={classes.goDown} onClick={this.scrollDown}>
+          <KeyboardArrowDown style={{ width: 50, height: 50 }} />
         </Button>
       </header>
     )
   }
 }
-
 
 export default withStyle(styles)(Header)

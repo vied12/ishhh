@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import withStyle from 'react-jss'
 
-const styles = ({
+const styles = {
   root: {
     marginTop: 20,
     paddingTop: 60,
@@ -22,22 +22,21 @@ const styles = ({
       minWidth: '100%',
       minHeight: '100%',
       objectFit: 'cover',
-      boxShadow: [0, 0, 25, 'rgba(0, 0, 0, 0.3)']
-    }
-  }
-})
+      boxShadow: [0, 0, 25, 'rgba(0, 0, 0, 0.3)'],
+    },
+  },
+}
 
 class Pictures extends Component {
-
   render() {
-    const { classes, pictures, } = this.props
+    const { classes, pictures } = this.props
     return (
       <div className={classes.root}>
-        {pictures.map(((src, i) => (
+        {pictures.map((src, i) => (
           <div className={classes.gridItem} key={src}>
             <img src={src} alt={src} />
           </div>
-        )))}
+        ))}
       </div>
     )
   }

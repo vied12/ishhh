@@ -11,17 +11,17 @@ import { previousCollection, catalog } from 'pictures'
 
 const styles = {
   root: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
   containerWithMargin: {
     margin: 40,
-    marginTop: 100
+    marginTop: 100,
   },
   embed: {
     '& iframe': {
-      margin: 'auto !important'
-    }
-  }
+      margin: 'auto !important',
+    },
+  },
 }
 
 class Home extends Component {
