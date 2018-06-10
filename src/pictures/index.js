@@ -14,10 +14,8 @@ import IMG_5169 from 'pictures/2018/IMG_5169 copie.jpg'
 import IMG_5175 from 'pictures/2018/IMG_5175 copie.jpg'
 import IMG_5176 from 'pictures/2018/IMG_5176 copie.jpg'
 import IMG_5180 from 'pictures/2018/IMG_5180 copie.jpg'
-import IMG_5186 from 'pictures/2018/IMG_5186 copie.jpg'
 import IMG_5187 from 'pictures/2018/IMG_5187 copie.jpg'
 import IMG_5196 from 'pictures/2018/IMG_5196 copie.jpg'
-import IMG_5219 from 'pictures/2018/IMG_5219 copie.jpg'
 
 import CROP_GREENYELLOW_IRI_1 from 'pictures/galery/CROP GREENYELLOW IRI_1.JPG'
 import CROP_GREENYELLOW_IRI_2 from 'pictures/galery/CROP GREENYELLOW IRI-2.JPG'
@@ -84,127 +82,125 @@ export const pictures = [
   IMG_5136,
   IMG_5144,
   IMG_5147,
-  IMG_5169,
   IMG_5175,
+  IMG_5169,
   IMG_5176,
   IMG_5180,
-  IMG_5186,
   IMG_5187,
-  IMG_5196,
-  IMG_5219,
+  IMG_5196
 ]
 
 export const catalog = [
   {
-    name: 'CROP_GREENYELLOW_IRI',
-    front: CROP_GREENYELLOW_IRI_1,
-    back: CROP_GREENYELLOW_IRI_2,
-  },
-  {
-    name: 'CROP_ORANGEBLUE_IRI',
-    front: CROP_ORANGEBLUE_IRI_1bisbisbis,
-    back: CROP_ORANGEBLUE_IRI_2,
-  },
-  {
-    name: 'CROP_PINKYELLOW_IRI',
-    front: CROP_PINKYELLOW_IRI_1,
-    back: CROP_PINKYELLOW_IRI_2,
-  },
-  {
-    name: 'CROP_SALMON_PINK',
-    front: CROP_SALMON_PINK_1,
-    back: CROP_SALMON_PINK_2,
-  },
-  {
-    name: 'CROP_SAREE_SWEET_RED',
-    front: CROP_SAREE_SWEET_RED_1,
-    back: CROP_SAREE_SWEET_RED_2,
-  },
-  {
-    name: 'CROP_YELLOW',
-    front: CROP_YELLOW_1,
-    back: CROP_YELLOW_2,
-  },
-  {
-    name: 'CROP_YELLOWGOLD',
-    front: CROP_YELLOWGOLD_1,
-    back: CROP_YELLOWGOLD_2,
-  },
-  {
-    name: 'JEAN_ORANGEBLUE',
-    front: JEAN_ORANGEBLUE_1,
-    back: JEAN_ORANGEBLUE_2,
-  },
-  {
-    name: 'JEAN_PINK',
-    front: JEAN_PINK_1,
-    back: JEAN_PINK_2,
-  },
-  {
     name: 'KIM_DUCK_BLUE',
     front: KIM_DUCK_BLUE_1,
-    back: KIM_DUCK_BLUE_2,
+    back: KIM_DUCK_BLUE_2
   },
   {
     name: 'KIM_SAREE_IVORY',
     front: KIM_SAREE_IVORY_1,
-    back: KIM_SAREE_IVORY_2,
+    back: KIM_SAREE_IVORY_2
   },
   {
     name: 'KIM_SAREE_PINK_1bis',
     front: KIM_SAREE_PINK_1bis,
-    back: KIM_SAREE_PINK_2,
+    back: KIM_SAREE_PINK_2
   },
   {
     name: 'KIM_SAREE_ROYAL_BLUE',
     front: KIM_SAREE_ROYAL_BLUE_1,
-    back: KIM_SAREE_ROYAL_BLUE_2,
+    back: KIM_SAREE_ROYAL_BLUE_2
   },
   {
     name: 'KIM_SAREE_SWEET_RED',
     front: KIM_SAREE_SWEET_RED_1,
-    back: KIM_SAREE_SWEET_RED_2,
+    back: KIM_SAREE_SWEET_RED_2
   },
   {
     name: 'KIM_SAREE_TERRACOTA',
     front: KIM_SAREE_TERRACOTA_1,
-    back: KIM_SAREE_TERRACOTA_2,
+    back: KIM_SAREE_TERRACOTA_2
   },
   {
     name: 'KIM_SKY_BLUEGOLD',
     front: KIM_SKY_BLUEGOLD_1,
-    back: KIM_SKY_BLUEGOLD_2,
+    back: KIM_SKY_BLUEGOLD_2
   },
   {
     name: 'KIM_SWEET_GREEN_AND_CO',
     front: KIM_SWEET_GREEN_AND_CO_1,
-    back: KIM_SWEET_GREEN_AND_CO_2,
+    back: KIM_SWEET_GREEN_AND_CO_2
   },
   {
     name: 'KIM_WHITE',
     front: KIM_WHITE_1,
-    back: KIM_WHITE_2,
+    back: KIM_WHITE_2
   },
   {
     name: 'KIM_YELLOW',
     front: KIM_YELLOW_1,
-    back: KIM_YELLOW_2,
+    back: KIM_YELLOW_2
   },
   {
     name: 'KIM_YELLOW_GOLD',
     front: KIM_YELLOW_GOLD_1,
-    back: KIM_YELLOW_GOLD_2bis,
+    back: KIM_YELLOW_GOLD_2bis
+  },
+  {
+    name: 'CROP_GREENYELLOW_IRI',
+    front: CROP_GREENYELLOW_IRI_1,
+    back: CROP_GREENYELLOW_IRI_2
+  },
+  {
+    name: 'CROP_ORANGEBLUE_IRI',
+    front: CROP_ORANGEBLUE_IRI_1bisbisbis,
+    back: CROP_ORANGEBLUE_IRI_2
+  },
+  {
+    name: 'CROP_PINKYELLOW_IRI',
+    front: CROP_PINKYELLOW_IRI_1,
+    back: CROP_PINKYELLOW_IRI_2
+  },
+  {
+    name: 'CROP_SALMON_PINK',
+    front: CROP_SALMON_PINK_1,
+    back: CROP_SALMON_PINK_2
+  },
+  {
+    name: 'CROP_SAREE_SWEET_RED',
+    front: CROP_SAREE_SWEET_RED_1,
+    back: CROP_SAREE_SWEET_RED_2
+  },
+  {
+    name: 'CROP_YELLOW',
+    front: CROP_YELLOW_1,
+    back: CROP_YELLOW_2
+  },
+  {
+    name: 'CROP_YELLOWGOLD',
+    front: CROP_YELLOWGOLD_1,
+    back: CROP_YELLOWGOLD_2
   },
   {
     name: 'LEVIS_GOLD',
     front: LEVIS_GOLD_1,
-    back: LEVIS_GOLD_2,
+    back: LEVIS_GOLD_2
   },
   {
     name: 'LEVIS_PURPLE',
     front: LEVIS_PURPLE_1,
-    back: LEVIS_PURPLE_2,
+    back: LEVIS_PURPLE_2
   },
+  {
+    name: 'JEAN_ORANGEBLUE',
+    front: JEAN_ORANGEBLUE_1,
+    back: JEAN_ORANGEBLUE_2
+  },
+  {
+    name: 'JEAN_PINK',
+    front: JEAN_PINK_1,
+    back: JEAN_PINK_2
+  }
 ]
 
 export const selection = [
@@ -213,14 +209,7 @@ export const selection = [
   IMG_5046,
   IMG_5144,
   IMG_5175,
-  IMG_5196,
+  IMG_5196
 ]
 
-
-export const previousCollection = [
-  MG_3241,
-  MG_3345,
-  MG_3438,
-  MG_3518,
-  MG_3560,
-]
+export const previousCollection = [MG_3241, MG_3345, MG_3438, MG_3518, MG_3560]
