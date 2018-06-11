@@ -14,31 +14,35 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import history from 'utils/history'
 
+const SHIPPING = 5
+
 const styles = {
   root: {
     textAlign: 'center',
   },
   logoContainer: {
-    marginBottom: 60,
+    marginTop: 40,
+    marginBottom: 100,
+    display: 'inline-block',
   },
   logo: {
     maxWidth: '70%',
     maxHeight: 200,
   },
   images: {
-    margin: [[40, 0]],
+    margin: [[70, 0]],
   },
   image: {
-    width: '50%',
-    maxWidth: 400,
+    width: '40%',
+    maxWidth: 600,
     boxShadow: '0 0 1px rgba(0, 0, 0, .4)',
+    margin: 20,
   },
   title: {
     marginBottom: 40,
   },
   selectBox: {
     width: 120,
-    margin: [[0, 60]],
   },
 }
 
@@ -73,7 +77,7 @@ class Details extends Component {
         method: 'POST',
         body: JSON.stringify({
           stripeToken: token.id,
-          amount: parseInt(item.price, 10) * 100,
+          amount: (parseInt(item.price, 10) + SHIPPING) * 100,
           currency: 'EUR',
           description: `${item.name} ${chosenSize}`,
         }),
@@ -118,9 +122,11 @@ class Details extends Component {
         <Typography variant="display3" className={classes.title} gutterBottom>
           {item.name}
         </Typography>
-        <Typography variant="display2" style={{ margin: 40 }}>
-          {item.price} €
-        </Typography>
+        <div className={classes.images}>
+          <img src={item.front} alt="front" className={classes.image} />
+          <img src={item.back} alt="back" className={classes.image} />
+        </div>
+        <Typography variant="display3">Buy online</Typography>
         <FormControl className={classes.selectBox}>
           <InputLabel htmlFor="age-simple">Size</InputLabel>
           <Select
@@ -145,7 +151,7 @@ class Details extends Component {
           stripeKey="pk_test_l4UTcBerN81uYBRf3vNs7eyz"
           token={this.handleToken}
           currency="EUR"
-          amount={parseInt(item.price, 10) * 100}
+          amount={(parseInt(item.price, 10) + SHIPPING) * 100}
           name="ISHHH"
           locale="auto"
           billingAddress={false}
@@ -157,20 +163,15 @@ class Details extends Component {
             variant="raised"
             color="primary"
             size="large"
+            style={{ margin: 40 }}
             disabled={!chosenSize}
           >
             Order now
           </Button>
         </StripeCheckout>
-        <div className={classes.images}>
-          <img
-            src={item.front}
-            alt="front"
-            className={classes.image}
-            style={{ marginRight: 40 }}
-          />
-          <img src={item.back} alt="back" className={classes.image} />
-        </div>
+        <Typography variant="display2">{item.price} €</Typography>
+        <Typography>Shipping: + {SHIPPING} €</Typography>
+
         <Typography variant="display3" gutterBottom style={{ marginTop: 200 }}>
           Others clothes available
         </Typography>

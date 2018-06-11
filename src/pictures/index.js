@@ -1,6 +1,6 @@
 import IMG_4948 from 'pictures/2018/IMG_4948 copie.jpg'
-import IMG_4967 from 'pictures/2018/IMG_4967 copie.jpg'
 import IMG_4979 from 'pictures/2018/IMG_4979 copie.jpg'
+import IMG_4950 from 'pictures/2018/IMG_4950.JPG'
 import IMG_5012 from 'pictures/2018/IMG_5012 copie.jpg'
 import IMG_5023 from 'pictures/2018/IMG_5023 copie.jpg'
 import IMG_5026 from 'pictures/2018/IMG_5026 copie.jpg'
@@ -70,9 +70,9 @@ import MG_3518 from 'pictures/2017/MG_3518.jpg'
 import MG_3560 from 'pictures/2017/MG_3560.jpg'
 
 export const pictures = [
-  IMG_4967,
-  IMG_4948,
   IMG_4979,
+  IMG_4948,
+  IMG_4950,
   IMG_5012,
   IMG_5023,
   IMG_5026,
