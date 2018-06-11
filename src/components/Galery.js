@@ -69,8 +69,8 @@ const styles = theme => ({
 const SIZES = {
   xs: 1,
   sm: 2,
-  md: 4,
-  lg: 4,
+  md: 3,
+  lg: 3,
   xl: 6,
 }
 
