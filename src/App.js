@@ -1,12 +1,14 @@
 import React from 'react'
-import { HashRouter as Router, Route } from 'react-router-dom'
+import { Router, Route } from 'react-router-dom'
 import Home from 'components/Home'
 import Details from 'components/Details'
+import PaymentSuccessful from 'components/PaymentSuccessful'
 import Impressum from 'components/Impressum'
 import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import primary from '@material-ui/core/colors/deepOrange'
 import ScrollToTop from 'components/ScrollToTop'
+import history from 'utils/history'
 
 import 'typeface-amatic-sc'
 import 'typeface-roboto'
@@ -50,10 +52,11 @@ const styles = {}
 const App = ({ classes }) => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Router>
+      <Router history={history}>
         <ScrollToTop>
           <Route exact path="/" component={Home} />
           <Route path="/impressum" component={Impressum} />
+          <Route path="/payment-successful" component={PaymentSuccessful} />
           <Route exact path="/:key" component={Details} />
         </ScrollToTop>
       </Router>

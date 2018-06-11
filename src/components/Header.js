@@ -106,6 +106,10 @@ class Header extends React.Component {
     this.setHeight()
   }
 
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.setHeight)
+  }
+
   setHeight = () => {
     this.setState({ height: window.innerHeight })
   }

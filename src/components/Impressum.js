@@ -7,11 +7,11 @@ const styles = {
   root: {
     textAlign: 'center',
     maxWidth: 800,
-    margin: [0, 'auto'],
+    margin: [[0, 'auto']],
   },
 }
 
-class Home extends Component {
+class Impressum extends Component {
   render() {
     const { classes } = this.props
     return (
@@ -72,4 +72,4 @@ class Home extends Component {
   }
 }
 
-export default withStyles(styles)(Home)
+export default withStyles(styles)(Impressum)

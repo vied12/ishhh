@@ -114,6 +114,8 @@ const pictures = [
   },
 ]
 
+const CLOTHES_SIZES = ['X/S', 'S/M', 'M/L']
+
 const url =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8lPXBdXzUgoV_HWv_b70gbKfjdRMFCzkR4rRhzPjMHqM7OeXERsVi9NZyRMMOJlCojUqGdf1oJ0Uf/pub?output=csv'
 let DATA = null
@@ -128,6 +130,7 @@ const getData = () => {
       DATA = data.map(d => ({
         ...d,
         ...pictures.find(p => p.key === d.key),
+        sizes: CLOTHES_SIZES.filter(s => d[s] > 0),
       }))
       return DATA
     })

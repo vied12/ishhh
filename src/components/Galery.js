@@ -109,7 +109,7 @@ class Galery extends Component {
 
     return (
       <div className={classes.root}>
-        {stocks.map((d, i) => (
+        {stocks.filter(d => !!d.key).map((d, i) => (
           <Link
             to={`/${d.key}`}
             className={classes.gridItem}
