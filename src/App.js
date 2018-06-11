@@ -6,6 +6,7 @@ import Impressum from 'components/Impressum'
 import { withStyles } from '@material-ui/core/styles'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import primary from '@material-ui/core/colors/deepOrange'
+import ScrollToTop from 'components/ScrollToTop'
 
 import 'typeface-amatic-sc'
 import 'typeface-roboto'
@@ -50,11 +51,11 @@ const App = ({ classes }) => {
   return (
     <MuiThemeProvider theme={theme}>
       <Router>
-        <div className={classes.root}>
+        <ScrollToTop>
           <Route exact path="/" component={Home} />
           <Route path="/impressum" component={Impressum} />
           <Route exact path="/:key" component={Details} />
-        </div>
+        </ScrollToTop>
       </Router>
     </MuiThemeProvider>
   )
