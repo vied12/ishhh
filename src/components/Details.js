@@ -73,7 +73,7 @@ class Details extends Component {
       {
         method: 'POST',
         body: JSON.stringify({
-          // stripeToken: token.id,
+          stripeToken: token.id,
           amount: parseInt(item.price, 10) * 100,
           currency: 'EUR',
           description: `${item.name} ${chosenSize}`,
