@@ -19,7 +19,6 @@ const styles = {
     textAlign: 'center',
   },
   logoContainer: {
-    display: 'block',
     marginBottom: 60,
   },
   logo: {
