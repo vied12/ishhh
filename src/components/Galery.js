@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles'
 import withWidth from '@material-ui/core/withWidth'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Chip from '@material-ui/core/Chip'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import getData from 'data'
@@ -106,7 +107,9 @@ class Galery extends Component {
             <img src={d.front} alt={d.name} />
             <div className={classNames(classes.label)}>
               <Typography>{d.name}</Typography>
-              <Typography>{this.getSizes(d.key).join(' ')}</Typography>
+              {this.getSizes(d.key).map(s => (
+                <Chip key={s} label={s} style={{ marginRight: 10 }} />
+              ))}
             </div>
           </Link>
         ))}
