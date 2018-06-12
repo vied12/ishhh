@@ -60,6 +60,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'unset',
     '& > *': {
       width: '100%',
       fontFamily: "'Amatic SC', cursive",
