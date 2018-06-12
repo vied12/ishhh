@@ -20,6 +20,7 @@ const styles = theme => ({
     width: `${100 / 6}%`,
     boxSizing: 'border-box',
     position: 'relative',
+    overflow: 'hidden',
     '&:after': {
       content: '""',
       display: 'block',
@@ -29,9 +30,13 @@ const styles = theme => ({
       position: 'absolute',
       width: '100%',
       height: '100%',
+      transition: 'all .75s',
       objectFit: 'cover',
     },
     '&:hover': {
+      '& $img': {
+        transform: 'scale(1.1)',
+      },
       '& $label': {
         opacity: 1,
       },
