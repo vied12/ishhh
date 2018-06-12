@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
   root: {
-    marginTop: 200,
+    marginTop: 100,
     padding: 60,
     textAlign: 'center',
     '& a': {
