@@ -16,7 +16,7 @@ import history from 'utils/history'
 
 const SHIPPING = 5
 
-const styles = {
+const styles = theme => ({
   root: {
     textAlign: 'center',
   },
@@ -33,10 +33,32 @@ const styles = {
     margin: [[70, 0]],
   },
   image: {
+    display: 'inline-block',
     width: '40%',
     maxWidth: 600,
     boxShadow: '0 0 1px rgba(0, 0, 0, .4)',
     margin: 20,
+    position: 'relative',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+      margin: 0,
+      marginBottom: 40,
+    },
+    '& img': {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+    },
+    '&:after': {
+      content: '""',
+      display: 'block',
+      paddingBottom: '100%',
+    },
   },
   title: {
     marginBottom: 40,
@@ -44,7 +66,7 @@ const styles = {
   selectBox: {
     width: 120,
   },
-}
+})
 
 class Details extends Component {
   state = {
@@ -123,8 +145,12 @@ class Details extends Component {
           {item.name}
         </Typography>
         <div className={classes.images}>
-          <img src={item.front} alt="front" className={classes.image} />
-          <img src={item.back} alt="back" className={classes.image} />
+          <div className={classes.image}>
+            <img src={item.front} alt="front" />
+          </div>
+          <div className={classes.image}>
+            <img src={item.back} alt="back" />
+          </div>
         </div>
         <Typography variant="display3">Buy online</Typography>
         <FormControl className={classes.selectBox}>
