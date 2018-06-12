@@ -114,7 +114,7 @@ const pictures = [
   },
 ]
 
-const CLOTHES_SIZES = ['X/S', 'S/M', 'M/L']
+const CLOTHES_SIZES = ['X/S', 'S/M', 'M/L', 'S', 'M', 'L']
 
 const url =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8lPXBdXzUgoV_HWv_b70gbKfjdRMFCzkR4rRhzPjMHqM7OeXERsVi9NZyRMMOJlCojUqGdf1oJ0Uf/pub?output=csv'

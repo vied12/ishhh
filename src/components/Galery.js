@@ -74,8 +74,6 @@ const SIZES = {
   xl: 6,
 }
 
-const CLOTHES_SIZES = ['X/S', 'S/M', 'M/L']
-
 class Galery extends Component {
   state = {
     stocks: [],
@@ -89,18 +87,7 @@ class Galery extends Component {
 
   getSizes = key => {
     const item = this.state.stocks.find(d => d.key === key)
-    const availableSizes = []
-    if (item) {
-      CLOTHES_SIZES.forEach(s => {
-        if (item[s] > 0) {
-          availableSizes.push(s)
-        }
-      })
-    }
-    if (availableSizes.length === 0) {
-      availableSizes.push('SOLD OUT')
-    }
-    return availableSizes
+    return item && item.sizes.length > 0 ? item.sizes : ['SOLD OUT']
   }
 
   render() {
