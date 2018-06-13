@@ -34,7 +34,7 @@ const styles = theme => ({
       objectFit: 'cover',
     },
     '&:hover': {
-      '& $img': {
+      '& img': {
         transform: 'scale(1.1)',
       },
       '& $label': {

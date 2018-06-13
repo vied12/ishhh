@@ -51,39 +51,43 @@ class Home extends Component {
           className={classes.containerWithMargin}
           style={{ textAlign: 'left' }}
         >
-          <Typography variant="display3" gutterBottom>
-            Find me
-          </Typography>
           <Grid container spacing={40} style={{}}>
-            <Grid item xs={12} md={3}>
-              <img width="100%" src={shopImg} alt="Shop" />
-            </Grid>
-            <Grid item xs={12} md={9}>
-              <Typography style={{ fontWeight: 400 }}>
-                Dunkel Blau fast Schwarz
+            <Grid item xs={12} md={6}>
+              <Typography variant="display3" gutterBottom>
+                Find me
               </Typography>
-              <Typography>Rykestraße 16, Prenzlauer Berg, Berlin</Typography>
-              <Typography>Monday - Friday: 12pm - 7pm</Typography>
-              <Typography>Saturday: 12pm - 6pm</Typography>
+              <Grid container spacing={40} style={{}}>
+                <Grid item xs={12} md={5}>
+                  <img width="100%" src={shopImg} alt="Shop" />
+                </Grid>
+                <Grid item xs={12} md={7}>
+                  <Typography style={{ fontWeight: 400 }}>
+                    Dunkel Blau fast Schwarz
+                  </Typography>
+                  <Typography>
+                    Rykestraße 16, Prenzlauer Berg, Berlin
+                  </Typography>
+                  <Typography>Monday - Friday: 12pm - 7pm</Typography>
+                  <Typography>Saturday: 12pm - 6pm</Typography>
+                </Grid>
+              </Grid>
             </Grid>
-          </Grid>
-          <Typography
-            variant="display3"
-            gutterBottom
-            style={{ marginTop: 100 }}
-          >
-            About me
-          </Typography>
-          <Grid container spacing={40}>
-            <Grid item xs={12} md={3}>
-              <img
-                alt="The creator, Carmen, in Inda"
-                src={meImg}
-                style={{ width: '100%', borderRadius: 0 }}
-              />
-            </Grid>
-            <Grid item xs={12} md={9}>
-              <AboutMe />
+            <Grid item xs={12} md={6}>
+              <Typography variant="display3" gutterBottom>
+                About me
+              </Typography>
+              <Grid container spacing={40}>
+                <Grid item xs={12} md={5}>
+                  <img
+                    alt="The creator, Carmen, in Inda"
+                    src={meImg}
+                    style={{ width: '100%', borderRadius: 0 }}
+                  />
+                </Grid>
+                <Grid item xs={12} md={7}>
+                  <AboutMe />
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </div>

@@ -152,7 +152,15 @@ class Details extends Component {
             <img src={item.back} alt="back" />
           </div>
         </div>
-        <Typography variant="display3">Buy online</Typography>
+        <Typography variant="display3" gutterBottom>
+          Buy online
+        </Typography>
+        {item.description &&
+          item.description.split('\n').map((s, i) => (
+            <Typography key={i} gutterBottom>
+              {s}
+            </Typography>
+          ))}
         <FormControl className={classes.selectBox}>
           <InputLabel htmlFor="age-simple">Size</InputLabel>
           <Select

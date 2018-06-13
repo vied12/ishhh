@@ -24,7 +24,7 @@ const Footer = ({ classes }) => (
       <img src={logo} width={150} alt="ISHHH logo" />
     </Link>
     <Typography variant="body2" className={classes.credits}>
-      Pattern maker/designer:{' '}
+      Dress designer:{' '}
       <a href="mailto:loicxgros@gmail.com" rel="nofollow noreferrer">
         Loïc Gros
       </a>
