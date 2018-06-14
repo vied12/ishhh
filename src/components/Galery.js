@@ -8,6 +8,7 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import getData from 'data'
 import LazyLoad from 'react-lazyload'
+import ShopIcon from '@material-ui/icons/ShoppingBasket'
 
 const styles = theme => ({
   root: {
@@ -45,11 +46,11 @@ const styles = theme => ({
   },
   label: {
     position: 'absolute',
+    textAlign: 'center',
     left: 0,
     right: 0,
     bottom: 0,
-    textAlign: 'center',
-    padding: 5,
+    padding: [[5, 10]],
     backgroundColor: 'rgba(255, 255, 255, .9)',
     opacity: 0,
     transition: 'all .25s',
@@ -71,6 +72,11 @@ const styles = theme => ({
         color: 'white',
       },
     },
+  },
+  shopIcon: {
+    color: theme.palette.text.secondary,
+    verticalAlign: 'middle',
+    padding: [[0, 20]],
   },
 })
 
@@ -115,6 +121,7 @@ class Galery extends Component {
             </LazyLoad>
             <div className={classNames(classes.label)}>
               <Typography>{d.name}</Typography>
+              <ShopIcon className={classes.shopIcon} />
               {this.getSizes(d.key).map(s => (
                 <Chip key={s} label={s} style={{ marginRight: 10 }} />
               ))}
