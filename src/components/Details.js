@@ -214,7 +214,7 @@ class Details extends Component {
           <a
             href="https://stripe.com/us/privacy"
             target="_blank"
-            rel="nofollow noreferrer"
+            rel="nofollow noreferrer noopener"
             style={{ color: 'black' }}
           >
             https://stripe.com/us/privacy

@@ -133,6 +133,8 @@ class Galery extends Component {
           <Button
             color="primary"
             variant="contained"
+            target="_blank"
+            rel="nofollow noreferrer noopener"
             href="https://m.me/ishhhliebedich"
           >
             Contact Me

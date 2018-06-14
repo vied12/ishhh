@@ -25,27 +25,30 @@ const Footer = ({ classes }) => (
     </Link>
     <Typography variant="body2" className={classes.credits}>
       Dress designer:{' '}
-      <a href="mailto:loicxgros@gmail.com" rel="nofollow noreferrer">
+      <a href="mailto:loicxgros@gmail.com" rel="nofollow noreferrer noopener">
         Loïc Gros
       </a>
       <br />
       Graphic identity:{' '}
-      <a href="http://www.juliaze.com" rel="nofollow noreferrer">
+      <a href="http://www.juliaze.com" rel="nofollow noreferrer noopener">
         Julia Zé
       </a>
       <br />
       Model:{' '}
-      <a href="https://www.instagram.com/technopussi" rel="nofollow noreferrer">
+      <a
+        href="https://www.instagram.com/technopussi"
+        rel="nofollow noreferrer noopener"
+      >
         Nikki
       </a>
       <br />
       Hair & Make-up artist:{' '}
-      <a href="http://adrianametzlaff.de" rel="nofollow noreferrer">
+      <a href="http://adrianametzlaff.de" rel="nofollow noreferrer noopener">
         Adriana Metzlaff
       </a>
       <br />
       Website:{' '}
-      <a href="https://vied12.github.io" rel="nofollow noreferrer">
+      <a href="https://vied12.github.io" rel="nofollow noreferrer noopener">
         Edouard Richard
       </a>
       <br />
