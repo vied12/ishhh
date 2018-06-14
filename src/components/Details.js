@@ -211,7 +211,12 @@ class Details extends Component {
           We do not store your credit card information.<br />
           We instead rely on the secure third-party payment processor Stripe.<br />
           You may also want to read Stripe's privacy policy:{' '}
-          <a href="https://stripe.com/us/privacy" style={{ color: 'black' }}>
+          <a
+            href="https://stripe.com/us/privacy"
+            target="_blank"
+            rel="nofollow noreferrer"
+            style={{ color: 'black' }}
+          >
             https://stripe.com/us/privacy
           </a>
         </Typography>
