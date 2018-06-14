@@ -208,7 +208,14 @@ class Details extends Component {
         </StripeCheckout>
         <Typography variant="display2">{item.price} €</Typography>
         <Typography>Shipping: + {SHIPPING} €</Typography>
-
+        <Typography variant="caption" style={{ padding: 20 }}>
+          We do not store your credit card information.<br />
+          We instead rely on the secure third-party payment processor Stripe.<br />
+          You may also want to read Stripe's privacy policy:{' '}
+          <a href="https://stripe.com/us/privacy" style={{ color: 'black' }}>
+            https://stripe.com/us/privacy
+          </a>
+        </Typography>
         <Typography variant="display3" gutterBottom style={{ marginTop: 200 }}>
           Others clothes available
         </Typography>
