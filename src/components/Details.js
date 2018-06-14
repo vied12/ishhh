@@ -182,7 +182,10 @@ class Details extends Component {
           </Select>
         </FormControl>
         <StripeCheckout
-          stripeKey="pk_test_l4UTcBerN81uYBRf3vNs7eyz"
+          stripeKey={
+            console.log(process.env.REACT_APP_STRIPE_KEY) ||
+            process.env.REACT_APP_STRIPE_KEY
+          }
           token={this.handleToken}
           currency="EUR"
           amount={(parseInt(item.price, 10) + SHIPPING) * 100}
