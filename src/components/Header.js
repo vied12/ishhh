@@ -79,25 +79,34 @@ class Header extends React.Component {
     height: 0,
   }
 
+  promise = Promise.resolve()
+
   componentDidMount = () => {
     this.startTimeout()
   }
 
   nextImage = () => {
-    // wait for the next images
-    Promise.all(
-      [0, 1, 2].map(i => waitForImage(pictures[(i + 3) % pictures.length])),
-    ).then(() => {
+    this.promise.then(() => {
       this.setState(
         {
           imageIndex: (this.state.imageIndex + 3) % pictures.length,
         },
-        this.startTimeout,
+        () => {
+          this.startTimeout()
+        },
       )
     })
   }
 
   startTimeout = () => {
+    // wait for the next images
+    this.promise = Promise.all(
+      [0, 1, 2].map(i =>
+        waitForImage(
+          pictures[(this.state.imageIndex + i + 3) % pictures.length],
+        ),
+      ),
+    )
     this.changeInterval = setTimeout(this.nextImage, 5000)
   }
 
