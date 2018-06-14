@@ -105,26 +105,21 @@ class Galery extends Component {
     return (
       <div className={classes.root}>
         {stocks.filter(d => !!d.key).map((d, i) => (
-          <LazyLoad
-            height={window.outerWidth / SIZES[width]}
-            once
-            key={d.key}
-            offset={300}
+          <Link
+            to={`/${d.key}`}
+            className={classes.gridItem}
+            style={{ width: `${100 / SIZES[width]}%` }}
           >
-            <Link
-              to={`/${d.key}`}
-              className={classes.gridItem}
-              style={{ width: `${100 / SIZES[width]}%` }}
-            >
+            <LazyLoad once key={d.key} offset={300}>
               <img src={d.front} alt={d.name} />
-              <div className={classNames(classes.label)}>
-                <Typography>{d.name}</Typography>
-                {this.getSizes(d.key).map(s => (
-                  <Chip key={s} label={s} style={{ marginRight: 10 }} />
-                ))}
-              </div>
-            </Link>
-          </LazyLoad>
+            </LazyLoad>
+            <div className={classNames(classes.label)}>
+              <Typography>{d.name}</Typography>
+              {this.getSizes(d.key).map(s => (
+                <Chip key={s} label={s} style={{ marginRight: 10 }} />
+              ))}
+            </div>
+          </Link>
         ))}
         <div
           className={[classes.gridItem, classes.title].join(' ')}

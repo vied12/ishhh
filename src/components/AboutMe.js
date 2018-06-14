@@ -13,10 +13,10 @@ const styles = {
 const AboutMe = ({ classes }) => (
   <div>
     <Typography style={{ maxWidth: 600 }}>
-      I found inspiration in the indian colours and patterns, elegant sarees and
-      gold jewelries. I like to mix those fabrics with actual designs. I enjoy
-      the contrast between the urban cities, grey, the tar and the asphalt,
-      moderns buildings with colorful, golden and “traditionals” fabrics.
+      I find my inspiration in indian garment: elegant sarees, rich patterns,
+      colorful fabrics and gold jewelry. I enjoy the contrast between urban and
+      traditional, industrial vs craftmanship, the grey of asphalt vs. colorful
+      fashion and mixing contemporary designs with authentic indian fabrics.
     </Typography>
     <p className="follow-us">
       <Button
