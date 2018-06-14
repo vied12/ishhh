@@ -70,7 +70,7 @@ const waitForImage = src =>
   new Promise(resolve => {
     const img = new Image()
     img.src = src
-    img.onload = () => console.log('laoded') || resolve()
+    img.onload = () => resolve()
   })
 
 class Header extends React.Component {

@@ -8,14 +8,14 @@ import getData from 'data'
 import logo from 'images/ishhh-NB-MD.png'
 import { Link } from 'react-router-dom'
 import StripeCheckout from 'react-stripe-checkout'
-import InputLabel from '@material-ui/core/InputLabel'
-import MenuItem from '@material-ui/core/MenuItem'
-import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
 import history from 'utils/history'
+import Selector from 'components/Selector'
 
-const SHIPPING = 5
-
+const REGIONS = {
+  Germany: 5,
+  Europe: 7,
+  World: 9,
+}
 const styles = theme => ({
   root: {
     textAlign: 'center',
@@ -63,9 +63,6 @@ const styles = theme => ({
   title: {
     marginBottom: 40,
   },
-  selectBox: {
-    width: 120,
-  },
 })
 
 class Details extends Component {
@@ -73,6 +70,7 @@ class Details extends Component {
     item: null,
     error: false,
     chosenSize: '',
+    chosenRegion: '',
   }
 
   componentWillMount() {
@@ -99,7 +97,7 @@ class Details extends Component {
         method: 'POST',
         body: JSON.stringify({
           stripeToken: token.id,
-          amount: (parseInt(item.price, 10) + SHIPPING) * 100,
+          amount: (parseInt(item.price, 10) + this.getShippingPrice()) * 100,
           currency: 'EUR',
           description: `${item.name} ${chosenSize}`,
         }),
@@ -118,12 +116,17 @@ class Details extends Component {
     })
   }
 
+  getShippingPrice = () => {
+    return REGIONS[this.state.chosenRegion]
+  }
+
   render() {
     const { classes } = this.props
-    const { item, chosenSize, error } = this.state
+    const { item, chosenSize, chosenRegion, error } = this.state
     if (!item) {
       return null
     }
+    const shippingPrice = this.getShippingPrice()
     return (
       <div className={classes.root}>
         <Link to="/" className={classes.logoContainer}>
@@ -161,53 +164,49 @@ class Details extends Component {
               {s}
             </Typography>
           ))}
-        <FormControl className={classes.selectBox}>
-          <InputLabel htmlFor="age-simple">Size</InputLabel>
-          <Select
-            value={this.state.chosenSize}
-            onChange={event =>
-              this.setState({ chosenSize: event.target.value })
-            }
-            fullWidth
-            inputProps={{
-              name: 'size',
-              id: 'size',
-            }}
-          >
-            {item.sizes.map(size => (
-              <MenuItem value={size} key={size}>
-                {size}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
+        <Selector
+          value={chosenSize}
+          label="Sizes"
+          onChange={s => this.setState({ chosenSize: s })}
+          choices={item.sizes}
+        />
+        <Selector
+          value={chosenRegion}
+          label="Region"
+          onChange={s => this.setState({ chosenRegion: s })}
+          choices={Object.keys(REGIONS)}
+        />
         <StripeCheckout
-          stripeKey={
-            console.log(process.env.REACT_APP_STRIPE_KEY) ||
-            process.env.REACT_APP_STRIPE_KEY
-          }
+          stripeKey={process.env.REACT_APP_STRIPE_KEY}
           token={this.handleToken}
           currency="EUR"
-          amount={(parseInt(item.price, 10) + SHIPPING) * 100}
+          amount={(parseInt(item.price, 10) + shippingPrice) * 100}
           name="ISHHH"
           locale="auto"
           billingAddress={false}
           shippingAddress
           // bitcoin
-          disabled={!chosenSize}
+          disabled={!chosenSize || !chosenRegion}
         >
           <Button
             variant="raised"
             color="primary"
             size="large"
             style={{ margin: 40 }}
-            disabled={!chosenSize}
+            disabled={!chosenSize || !chosenRegion}
           >
             Order now
           </Button>
         </StripeCheckout>
         <Typography variant="display2">{item.price} €</Typography>
-        <Typography>Shipping: + {SHIPPING} €</Typography>
+        <Typography>
+          Shipping:{' '}
+          {shippingPrice ? (
+            `+ ${shippingPrice} €`
+          ) : (
+            <Typography variant="caption">Select a region first</Typography>
+          )}
+        </Typography>
         <Typography variant="caption" style={{ padding: 20 }}>
           We do not store your credit card information.<br />
           We instead rely on the secure third-party payment processor Stripe.<br />
