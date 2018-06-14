@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
+import LazyLoad from 'react-lazyload'
 
 const styles = {
   root: {
@@ -32,7 +33,9 @@ class Pictures extends Component {
       <div className={classes.root}>
         {pictures.map((src, i) => (
           <div className={classes.gridItem} key={src}>
-            <img src={src} alt={src} />
+            <LazyLoad once height="100%" offset={300}>
+              <img src={src} alt={src} />
+            </LazyLoad>
           </div>
         ))}
       </div>

@@ -66,6 +66,13 @@ const styles = {
   },
 }
 
+const waitForImage = src =>
+  new Promise(resolve => {
+    const img = new Image()
+    img.src = src
+    img.onload = () => console.log('laoded') || resolve()
+  })
+
 class Header extends React.Component {
   state = {
     imageIndex: 0,
@@ -73,24 +80,32 @@ class Header extends React.Component {
   }
 
   componentDidMount = () => {
-    this.startInterval()
+    this.startTimeout()
   }
 
   nextImage = () => {
-    this.setState({
-      imageIndex: (this.state.imageIndex + 3) % pictures.length,
+    // wait for the next images
+    Promise.all(
+      [0, 1, 2].map(i => waitForImage(pictures[(i + 3) % pictures.length])),
+    ).then(() => {
+      this.setState(
+        {
+          imageIndex: (this.state.imageIndex + 3) % pictures.length,
+        },
+        this.startTimeout,
+      )
     })
   }
 
-  startInterval = () => {
-    this.changeInterval = setInterval(this.nextImage, 5000)
+  startTimeout = () => {
+    this.changeInterval = setTimeout(this.nextImage, 5000)
   }
+
   resetIntervalAndGoNext = () => {
     if (this.changeInterval) {
-      clearInterval(this.changeInterval)
+      clearTimeout(this.changeInterval)
     }
     this.nextImage()
-    this.startInterval()
   }
 
   scrollDown = () => {
@@ -140,7 +155,6 @@ class Header extends React.Component {
             src={pictures[(imageIndex + 1) % pictures.length]}
             style={{
               width: '33.33%',
-              // top: 20,
               borderLeft: '2vw solid transparent',
               borderRight: '2vw solid transparent',
             }}

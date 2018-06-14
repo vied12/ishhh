@@ -7,6 +7,7 @@ import Chip from '@material-ui/core/Chip'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import getData from 'data'
+import LazyLoad from 'react-lazyload'
 
 const styles = theme => ({
   root: {
@@ -104,20 +105,26 @@ class Galery extends Component {
     return (
       <div className={classes.root}>
         {stocks.filter(d => !!d.key).map((d, i) => (
-          <Link
-            to={`/${d.key}`}
-            className={classes.gridItem}
-            style={{ width: `${100 / SIZES[width]}%` }}
+          <LazyLoad
+            height={window.outerWidth / SIZES[width]}
+            once
             key={d.key}
+            offset={300}
           >
-            <img src={d.front} alt={d.name} />
-            <div className={classNames(classes.label)}>
-              <Typography>{d.name}</Typography>
-              {this.getSizes(d.key).map(s => (
-                <Chip key={s} label={s} style={{ marginRight: 10 }} />
-              ))}
-            </div>
-          </Link>
+            <Link
+              to={`/${d.key}`}
+              className={classes.gridItem}
+              style={{ width: `${100 / SIZES[width]}%` }}
+            >
+              <img src={d.front} alt={d.name} />
+              <div className={classNames(classes.label)}>
+                <Typography>{d.name}</Typography>
+                {this.getSizes(d.key).map(s => (
+                  <Chip key={s} label={s} style={{ marginRight: 10 }} />
+                ))}
+              </div>
+            </Link>
+          </LazyLoad>
         ))}
         <div
           className={[classes.gridItem, classes.title].join(' ')}
