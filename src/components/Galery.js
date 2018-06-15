@@ -116,7 +116,7 @@ class Galery extends Component {
             className={classes.gridItem}
             style={{ width: `${100 / SIZES[width]}%` }}
           >
-            <LazyLoad once key={d.key} offset={300}>
+            <LazyLoad once key={d.key} offset={500}>
               <img src={d.front} alt={d.name} />
             </LazyLoad>
             <div className={classNames(classes.label)}>

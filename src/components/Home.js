@@ -40,7 +40,7 @@ class Home extends Component {
           <Typography gutterBottom variant="title">
             Indian fabrics and sarees with 100% cotton lining
           </Typography>
-          <Typography variant="title">Homemade in berlin</Typography>
+          <Typography variant="title">Handmade in berlin</Typography>
         </div>
         <Galery pictures={catalog} />
         <div className={classes.containerWithMargin}>
