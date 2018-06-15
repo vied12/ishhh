@@ -2,7 +2,7 @@
   "name": "ishhh",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vied12.github.io/ishhh2",
+  "homepage": "https://www.ishhh.de",
   "dependencies": {
     "@material-ui/core": "^1.1.0",
     "@material-ui/icons": "^1.1.0",
@@ -25,7 +25,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "predeploy": "npm run build",
-    "deploy": "gh-pages --remote v2 -d build",
+    "deploy": "gh-pages -d build",
     "start": "NODE_PATH=src/ react-scripts start",
     "build": "NODE_PATH=src/ react-scripts build",
     "test": "react-scripts test --env=jsdom",
