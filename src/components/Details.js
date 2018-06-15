@@ -63,6 +63,18 @@ const styles = theme => ({
   title: {
     marginBottom: 40,
   },
+  cgv: {
+    textAlign: 'left',
+    maxWidth: 600,
+    margin: 'auto',
+    marginTop: 60,
+    '& h2': {
+      fontSize: '.9rem',
+    },
+    '& p': {
+      fontSize: '.9rem',
+    },
+  },
 })
 
 class Details extends Component {
@@ -220,6 +232,64 @@ class Details extends Component {
             https://stripe.com/us/privacy
           </a>
         </Typography>
+        <div className={classes.cgv}>
+          <Typography gutterBottom variant="title">
+            Processing time
+          </Typography>
+          <Typography gutterBottom>1-3 business days</Typography>
+
+          <Typography gutterBottom variant="title">
+            Estimated shipping times
+          </Typography>
+          <Typography gutterBottom>
+            Europe: 3-6 business days<br />
+            I'll do my best to meet these shipping estimates, but can't
+            guarantee them.
+          </Typography>
+
+          <Typography gutterBottom variant="title">
+            Customs and import taxes
+          </Typography>
+          <Typography gutterBottom>
+            Buyers are responsible for any customs and import taxes that may
+            apply. I'm not responsible for delays due to customs.
+          </Typography>
+
+          <Typography gutterBottom variant="title">
+            I accept returns, exchanges and cancellations
+          </Typography>
+          <Typography gutterBottom>
+            Contact me within: 24 hours of delivery<br />
+            Ship items back within: 7 days of delivery<br />
+            Request a cancellation within: 12 hours of purchase
+          </Typography>
+
+          <Typography gutterBottom variant="title">
+            Conditions of return
+          </Typography>
+          <Typography gutterBottom>
+            Buyers are responsible for return shipping costs. If the item is not
+            returned in its original condition, the buyer is responsible for any
+            loss in value.
+          </Typography>
+
+          <Typography gutterBottom variant="title">
+            Questions about your order?
+          </Typography>
+          <Typography gutterBottom>
+            Please{' '}
+            <Button
+              color="primary"
+              target="_blank"
+              size="small"
+              rel="nofollow noreferrer noopener"
+              href="https://m.me/ishhhliebedich"
+            >
+              Contact Me
+            </Button>{' '}
+            if you have any problems with your order.
+          </Typography>
+        </div>
         <Typography variant="display3" gutterBottom style={{ marginTop: 200 }}>
           Others clothes available
         </Typography>
