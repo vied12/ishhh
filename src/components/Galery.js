@@ -113,10 +113,11 @@ class Galery extends Component {
         {stocks.filter(d => !!d.key).map((d, i) => (
           <Link
             to={`/${d.key}`}
+            key={i}
             className={classes.gridItem}
             style={{ width: `${100 / SIZES[width]}%` }}
           >
-            <LazyLoad once key={d.key} offset={500}>
+            <LazyLoad once offset={500} height="100%">
               <img src={d.front} alt={d.name} />
             </LazyLoad>
             <div className={classNames(classes.label)}>
