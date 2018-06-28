@@ -1,5 +1,6 @@
 import { catalog } from 'pictures'
 import { csvParse } from 'd3-dsv'
+import fetchRetry from 'fetch-retry'
 
 const pictures = [
   {
@@ -123,7 +124,10 @@ const getData = () => {
   if (DATA) {
     return Promise.resolve(DATA)
   }
-  return fetch(url)
+  return fetchRetry(url, {
+    retries: 10,
+    retryDelay: 500,
+  })
     .then(d => d.text())
     .then(d => {
       const data = csvParse(d)
