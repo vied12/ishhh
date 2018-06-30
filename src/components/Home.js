@@ -19,6 +19,7 @@ const styles = {
   containerWithMargin: {
     margin: 40,
     marginTop: 100,
+    marginBottom: 80,
   },
   embed: {
     '& iframe': {

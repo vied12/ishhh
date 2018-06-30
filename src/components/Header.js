@@ -5,6 +5,7 @@ import { pictures } from 'pictures'
 import logo from 'images/ishhh-NB-MD.png'
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
 const goDownAnimationId =
   'goDownAnimationId' + Math.floor(Math.random() * Math.pow(10, 10))
@@ -22,9 +23,14 @@ const styles = {
     textAlign: 'center',
   },
   logo: {
-    maxHeight: '100%',
+    maxHeight: '87%',
     animation: `${rotateId} 5s infinite`,
     animationDelay: 2500,
+  },
+  subLogo: {
+    fontFamily: "'Amatic SC', cursive",
+    fontWeight: 700,
+    fontSize: '2.3rem',
   },
   images: {
     display: 'flex',
@@ -145,6 +151,9 @@ class Header extends React.Component {
       <header className={classes.root}>
         <div className={classes.logoContainer} style={{ height: height * 0.3 }}>
           <img src={logo} alt="ISHHH" className={classes.logo} />
+          <Typography variant="display1" className={classes.subLogo}>
+            Online shop
+          </Typography>
         </div>
         <div
           className={classes.images}

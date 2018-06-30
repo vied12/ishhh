@@ -57,6 +57,9 @@ const styles = theme => ({
     '& p': {
       color: theme.palette.grey[700],
     },
+    [theme.breakpoints.down('sm')]: {
+      opacity: 1,
+    },
   },
   title: {
     display: 'flex',
@@ -122,10 +125,19 @@ class Galery extends Component {
             </LazyLoad>
             <div className={classNames(classes.label)}>
               <Typography>{d.name}</Typography>
-              <ShopIcon className={classes.shopIcon} />
-              {this.getSizes(d.key).map(s => (
-                <Chip key={s} label={s} style={{ marginRight: 10 }} />
-              ))}
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Typography>{d.price}&nbsp;€</Typography>
+                <ShopIcon className={classes.shopIcon} />
+                {this.getSizes(d.key).map(s => (
+                  <Chip key={s} label={s} style={{ marginRight: 10 }} />
+                ))}
+              </div>
             </div>
           </Link>
         ))}
