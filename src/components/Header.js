@@ -11,7 +11,7 @@ const goDownAnimationId =
   'goDownAnimationId' + Math.floor(Math.random() * Math.pow(10, 10))
 const rotateId = 'rotateId' + Math.floor(Math.random() * Math.pow(10, 10))
 
-const styles = {
+const styles = theme => ({
   root: {
     boxSizing: 'border-box',
     position: 'relative',
@@ -29,8 +29,8 @@ const styles = {
   },
   subLogo: {
     fontFamily: "'Amatic SC', cursive",
-    fontWeight: 700,
     fontSize: '2.3rem',
+    color: theme.palette.text.primary,
   },
   images: {
     display: 'flex',
@@ -70,7 +70,7 @@ const styles = {
       transform: 'scale(1.05)',
     },
   },
-}
+})
 
 const waitForImage = src =>
   new Promise(resolve => {
