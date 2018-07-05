@@ -15,7 +15,6 @@ const styles = theme => ({
   root: {
     boxSizing: 'border-box',
     position: 'relative',
-    marginBottom: 160,
   },
   logoContainer: {
     padding: '5vh',

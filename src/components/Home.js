@@ -11,6 +11,7 @@ import { previousCollection } from 'pictures'
 import catalog from 'data'
 import shopImg from 'images/shop.jpg'
 import meImg from 'images/me.jpg'
+import classNames from 'classnames'
 
 const styles = {
   root: {
@@ -26,6 +27,18 @@ const styles = {
       margin: 'auto !important',
     },
   },
+  introText: {
+    maxWidth: 600,
+    margin: [[80, 'auto', 100, 'auto']],
+    '& h1': {
+      marginBottom: 60,
+    },
+    '& p': {
+      fontSize: '1.4rem',
+      marginBottom: '0.7em',
+      textAlign: 'left',
+    },
+  },
 }
 
 class Home extends Component {
@@ -34,14 +47,25 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <Header />
-        <div className={classes.containerWithMargin}>
+        <div
+          className={classNames(classes.containerWithMargin, classes.introText)}
+        >
           <Typography variant="display3" gutterBottom>
-            Original and exclusive collection
+            Welcome to my shop!
           </Typography>
-          <Typography gutterBottom variant="title">
-            Indian fabrics and sarees with 100% cotton lining
+          <Typography gutterBottom>
+            I brought from my travel in India a selection of my favorite fabrics
+            and traditional sarees for you. I wanted to twist their colors,
+            patterns and embroideries with a minimalist and structured cut. A
+            way to reveal their prestance and yours.
           </Typography>
-          <Typography variant="title">Handmade in berlin</Typography>
+          <Typography gutterBottom>
+            Kimonos and crop tops are made with a 100% cotton lining from
+            Germany for the best comfort. Jeans jackets are manually customized
+            with fabrics and a nath nose ring, an authentic indian jewelry. This
+            is a limited collection with unique pieces, everything is handmade
+            in Berlin. I hope you will enjoy it!
+          </Typography>
         </div>
         <Galery pictures={catalog} />
         <div className={classes.containerWithMargin}>
