@@ -28,13 +28,13 @@ const styles = {
     },
   },
   introText: {
-    maxWidth: 600,
+    maxWidth: 700,
     margin: [[80, 'auto', 100, 'auto']],
     '& h1': {
       marginBottom: 60,
     },
     '& p': {
-      fontSize: '1.4rem',
+      fontSize: '1.1rem',
       marginBottom: '0.7em',
       textAlign: 'left',
     },
@@ -51,11 +51,11 @@ class Home extends Component {
           className={classNames(classes.containerWithMargin, classes.introText)}
         >
           <Typography variant="display3" gutterBottom>
-            Welcome to my shop!
+            Welcome to Ishhh Shop
           </Typography>
           <Typography gutterBottom>
-            I brought from my travel in India a selection of my favorite fabrics
-            and traditional sarees for you. I wanted to twist their colors,
+            I brought from my travels in India a selection of my favorite
+            fabrics and traditional sarees. I wanted to twist their colors,
             patterns and embroideries with a minimalist and structured cut. A
             way to reveal their prestance and yours.
           </Typography>

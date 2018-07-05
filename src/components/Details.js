@@ -4,12 +4,13 @@ import Galery from 'components/Galery'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import getData from 'data'
 import logo from 'images/ishhh-NB-MD.png'
 import { Link } from 'react-router-dom'
 import StripeCheckout from 'react-stripe-checkout'
 import history from 'utils/history'
 import Selector from 'components/Selector'
+import { connect } from 'react-redux'
+import compose from 'recompose/compose'
 
 const REGIONS = {
   Germany: 5,
@@ -85,24 +86,25 @@ class Details extends Component {
     chosenRegion: '',
   }
 
-  componentWillMount() {
-    this.getData()
-  }
+  // componentWillMount() {
+  //   this.getData()
+  // }
 
-  componentWillReceiveProps() {
-    this.getData()
-  }
+  // componentWillReceiveProps() {
+  //   this.getData()
+  // }
 
-  getData() {
-    getData().then(d =>
-      this.setState({
-        item: d.find(d => d.key === this.props.match.params.key),
-      }),
-    )
-  }
+  // getData() {
+  //   getData().then(d =>
+  //     this.setState({
+  //       item: d.find(d => d.key === this.props.match.params.key),
+  //     }),
+  //   )
+  // }
 
   handleToken = token => {
-    const { item, chosenSize } = this.state
+    const { item } = this.props
+    const { chosenSize } = this.state
     fetch(
       'https://wt-d7f3465bba4be50c0e0805107a2dddb9-0.sandbox.auth0-extend.com/stripe-payment/payment',
       {
@@ -133,8 +135,8 @@ class Details extends Component {
   }
 
   render() {
-    const { classes } = this.props
-    const { item, chosenSize, chosenRegion, error } = this.state
+    const { classes, item } = this.props
+    const { chosenSize, chosenRegion, error } = this.state
     if (!item) {
       return null
     }
@@ -180,7 +182,7 @@ class Details extends Component {
           value={chosenSize}
           label="Sizes"
           onChange={s => this.setState({ chosenSize: s })}
-          choices={item.sizes}
+          choices={item.sizes || []}
         />
         <Selector
           value={chosenRegion}
@@ -300,4 +302,9 @@ class Details extends Component {
   }
 }
 
-export default withStyles(styles)(Details)
+export default compose(
+  withStyles(styles),
+  connect((state, { match }) => ({
+    item: state.inventory.data.find(d => d.key === match.params.key),
+  })),
+)(Details)

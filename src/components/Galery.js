@@ -6,9 +6,10 @@ import Button from '@material-ui/core/Button'
 import Chip from '@material-ui/core/Chip'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
-import getData from 'data'
 import LazyLoad from 'react-lazyload'
 import ShopIcon from '@material-ui/icons/ShoppingBasket'
+import { connect } from 'react-redux'
+import compose from 'recompose/compose'
 
 const styles = theme => ({
   root: {
@@ -92,28 +93,17 @@ const SIZES = {
 }
 
 class Galery extends Component {
-  state = {
-    stocks: [],
-  }
-
-  componentWillMount = () => {
-    getData().then(d => {
-      this.setState({ stocks: d })
-    })
-  }
-
   getSizes = key => {
-    const item = this.state.stocks.find(d => d.key === key)
+    const item = this.props.inventory.find(d => d.key === key)
     return item && item.sizes.length > 0 ? item.sizes : ['SOLD OUT']
   }
 
   render() {
-    const { classes, width } = this.props
-    const { stocks } = this.state
+    const { classes, width, inventory } = this.props
 
     return (
       <div className={classes.root}>
-        {stocks.filter(d => !!d.key).map((d, i) => (
+        {inventory.filter(d => !!d.key).map((d, i) => (
           <Link
             to={`/${d.key}`}
             key={i}
@@ -125,19 +115,21 @@ class Galery extends Component {
             </LazyLoad>
             <div className={classNames(classes.label)}>
               <Typography>{d.name}</Typography>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}
-              >
-                <Typography>{d.price}&nbsp;€</Typography>
-                <ShopIcon className={classes.shopIcon} />
-                {this.getSizes(d.key).map(s => (
-                  <Chip key={s} label={s} style={{ marginRight: 10 }} />
-                ))}
-              </div>
+              {d.price && (
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Typography>{d.price}&nbsp;€</Typography>
+                  <ShopIcon className={classes.shopIcon} />
+                  {this.getSizes(d.key).map(s => (
+                    <Chip key={s} label={s} style={{ marginRight: 10 }} />
+                  ))}
+                </div>
+              )}
             </div>
           </Link>
         ))}
@@ -160,4 +152,10 @@ class Galery extends Component {
   }
 }
 
-export default withWidth()(withStyles(styles)(Galery))
+export default compose(
+  withWidth(),
+  withStyles(styles),
+  connect(state => ({
+    inventory: state.inventory.data,
+  })),
+)(Galery)
