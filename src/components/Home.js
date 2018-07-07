@@ -28,6 +28,7 @@ const styles = {
   },
   introText: {
     maxWidth: 700,
+    padding: 20,
     margin: [[60, 'auto', 80, 'auto']],
     '& h1': {
       marginBottom: 40,

@@ -68,6 +68,7 @@ const styles = theme => ({
     textAlign: 'left',
     maxWidth: 600,
     margin: 'auto',
+    padding: 20,
     marginTop: 60,
     '& h2': {
       fontSize: '.9rem',
