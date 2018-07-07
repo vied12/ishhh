@@ -163,7 +163,7 @@ class Details extends Component {
         </Typography>
         <div className={classes.images}>
           <div className={classes.image}>
-            <img src={item.front} alt="front" />
+            <img src={item.detail || item.front} alt="front" />
           </div>
           <div className={classes.image}>
             <img src={item.back} alt="back" />

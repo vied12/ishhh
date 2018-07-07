@@ -8,7 +8,6 @@ import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import { previousCollection } from 'pictures'
-import catalog from 'data'
 import shopImg from 'images/shop.jpg'
 import meImg from 'images/me.jpg'
 import classNames from 'classnames'
@@ -67,7 +66,7 @@ class Home extends Component {
             in Berlin. I hope you will enjoy it!
           </Typography>
         </div>
-        <Galery pictures={catalog} />
+        <Galery />
         <div className={classes.containerWithMargin}>
           <Typography variant="display3">Collection 2017</Typography>
         </div>

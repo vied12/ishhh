@@ -117,6 +117,12 @@ const initialState = {
       front: catalog.JEAN_PINK_1,
       back: catalog.JEAN_PINK_2,
     },
+    {
+      key: 'CUSTOMIZED_JEAN_JACKET_GREEN',
+      front: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_1,
+      back: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_3,
+      detail: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_2,
+    },
   ],
 }
 export default (state = initialState, action) => {

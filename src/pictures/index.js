@@ -61,6 +61,9 @@ import LEVIS_GOLD_1 from 'pictures/galery/LEVIS GOLD_1.JPG'
 import LEVIS_GOLD_2 from 'pictures/galery/LEVIS GOLD_2.JPG'
 import LEVIS_PURPLE_1 from 'pictures/galery/LEVIS PURPLE_1.JPG'
 import LEVIS_PURPLE_2 from 'pictures/galery/LEVIS PURPLE_2.JPG'
+import CUSTOMIZED_JEAN_JACKET_GREEN_3 from 'pictures/galery/CUSTOMIZED_JEAN_JACKET_GREEN_3.jpg'
+import CUSTOMIZED_JEAN_JACKET_GREEN_2 from 'pictures/galery/CUSTOMIZED_JEAN_JACKET_GREEN_2.jpg'
+import CUSTOMIZED_JEAN_JACKET_GREEN_1 from 'pictures/galery/CUSTOMIZED_JEAN_JACKET_GREEN_1.jpg'
 
 // previous
 import MG_3241 from 'pictures/2017/MG_3241.jpg'
@@ -135,6 +138,9 @@ export const catalog = {
   LEVIS_GOLD_2,
   LEVIS_PURPLE_1,
   LEVIS_PURPLE_2,
+  CUSTOMIZED_JEAN_JACKET_GREEN_3,
+  CUSTOMIZED_JEAN_JACKET_GREEN_2,
+  CUSTOMIZED_JEAN_JACKET_GREEN_1,
 }
 
 export const selection = [
