@@ -29,12 +29,12 @@ const styles = {
   },
   introText: {
     maxWidth: 700,
-    margin: [[80, 'auto', 100, 'auto']],
+    margin: [[60, 'auto', 80, 'auto']],
     '& h1': {
-      marginBottom: 60,
+      marginBottom: 40,
     },
     '& p': {
-      fontSize: '1.1rem',
+      fontSize: '1rem',
       marginBottom: '0.7em',
       textAlign: 'left',
     },
