@@ -3,6 +3,7 @@ import Fontawesome from 'react-fontawesome'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
+import EtsyIcon from 'components/EtsyIcon'
 
 const styles = {
   icon: {
@@ -38,6 +39,17 @@ const AboutMe = ({ classes }) => (
           className={classes.icon}
         />
         Ishhhliebedich
+      </Button>
+      <Button
+        href="https://www.etsy.com/shop/ISHHH"
+        target="_blank"
+        rel="nofollow noreferrer"
+      >
+        <EtsyIcon
+          className={classes.icon}
+          style={{ position: 'relative', left: -3 }}
+        />
+        Etsy Shop
       </Button>
     </p>
   </div>
