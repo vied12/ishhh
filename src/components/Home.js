@@ -51,7 +51,7 @@ class Home extends Component {
           className={classNames(classes.containerWithMargin, classes.introText)}
         >
           <Typography variant="display3" gutterBottom>
-            Welcome to Ishhh Shop
+            Welcome to ishhh Shop
           </Typography>
           <Typography gutterBottom>
             I brought from my travels in India a selection of my favorite

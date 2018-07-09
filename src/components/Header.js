@@ -26,11 +26,6 @@ const styles = theme => ({
     animation: `${rotateId} 5s infinite`,
     animationDelay: 2500,
   },
-  subLogo: {
-    fontFamily: "'Amatic SC', cursive",
-    fontSize: '2.3rem',
-    color: theme.palette.text.primary,
-  },
   images: {
     display: 'flex',
     '& img': {
@@ -150,9 +145,6 @@ class Header extends React.Component {
       <header className={classes.root}>
         <div className={classes.logoContainer} style={{ height: height * 0.3 }}>
           <img src={logo} alt="ISHHH" className={classes.logo} />
-          <Typography variant="display1" className={classes.subLogo}>
-            Online shop
-          </Typography>
         </div>
         <div
           className={classes.images}
