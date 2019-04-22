@@ -8,7 +8,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import { previousCollection } from 'pictures'
-import shopImg from 'images/shop.jpg'
+import shopImg from 'images/boutique-hanlaure.jpeg'
 import meImg from 'images/me.jpg'
 import classNames from 'classnames'
 
@@ -86,14 +86,10 @@ class Home extends Component {
                   <img width="100%" src={shopImg} alt="Shop" />
                 </Grid>
                 <Grid item xs={12} md={7}>
-                  <Typography style={{ fontWeight: 400 }}>
-                    Dunkel Blau fast Schwarz
-                  </Typography>
+                  <Typography style={{ fontWeight: 400 }}>Han'Laure</Typography>
                   <Typography>
-                    Rykestraße 16, Prenzlauer Berg, Berlin
+                    430 Quai Georges Pompidou<br />34280 La Grande-Motte<br />France
                   </Typography>
-                  <Typography>Monday - Friday: 12pm - 7pm</Typography>
-                  <Typography>Saturday: 12pm - 6pm</Typography>
                 </Grid>
               </Grid>
             </Grid>
