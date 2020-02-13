@@ -306,6 +306,6 @@ class Details extends Component {
 export default compose(
   withStyles(styles),
   connect((state, { match }) => ({
-    item: state.inventory.data.find(d => d.key === match.params.key),
+    item: state.inventory[2018].find(d => d.key === match.params.key),
   })),
 )(Details)

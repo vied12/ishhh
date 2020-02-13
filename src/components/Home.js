@@ -55,16 +55,16 @@ class Home extends Component {
           </Typography>
           <Typography gutterBottom>
             I brought from my travels in India a selection of my favorite
-            fabrics and traditional sarees. I wanted to twist their colors,
-            patterns and embroideries with a minimalist and structured cut. A
-            way to reveal their prestance and yours.
+            fabrics, traditional sarees and embroidered borders. I twisted those
+            elaborated patterns with a simple and structured cut to create
+            playful and elegant pieces.
           </Typography>
           <Typography gutterBottom>
-            Kimonos and crop tops are made with a 100% cotton lining from
-            Germany for the best comfort. Jeans jackets are manually customized
-            with fabrics and a nath nose ring, an authentic indian jewelry. This
-            is a limited collection with unique pieces, everything is handmade
-            in Berlin. I hope you will enjoy it!
+            Because comfort comes first, all garnments are made with a 100%
+            cotton lining from Germany. Jeans jackets are handmade sewed and
+            customized with a nath nose ring, an authentic indian jewelry. These
+            are limited collections with unique pieces created and produced in
+            Berlin.
           </Typography>
         </div>
         <Galery />

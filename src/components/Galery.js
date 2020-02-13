@@ -156,6 +156,6 @@ export default compose(
   withWidth(),
   withStyles(styles),
   connect(state => ({
-    inventory: state.inventory.data,
+    inventory: state.inventory[2018],
   })),
 )(Galery)
