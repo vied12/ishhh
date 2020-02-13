@@ -3,11 +3,9 @@ import Footer from 'components/Footer'
 import Header from 'components/Header'
 import AboutMe from 'components/AboutMe'
 import Galery from 'components/Galery'
-import Pictures from 'components/Pictures'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
-import { previousCollection } from 'pictures'
 import shopImg from 'images/boutique-hanlaure.jpeg'
 import meImg from 'images/me.jpg'
 import classNames from 'classnames'
@@ -68,10 +66,6 @@ class Home extends Component {
           </Typography>
         </div>
         <Galery />
-        <div className={classes.containerWithMargin}>
-          <Typography variant="display3">Collection 2017</Typography>
-        </div>
-        <Pictures pictures={previousCollection} />
         <div
           className={classes.containerWithMargin}
           style={{ textAlign: 'left' }}
@@ -88,7 +82,11 @@ class Home extends Component {
                 <Grid item xs={12} md={7}>
                   <Typography style={{ fontWeight: 400 }}>Han'Laure</Typography>
                   <Typography>
-                    430 Quai Georges Pompidou<br />34280 La Grande-Motte<br />France
+                    430 Quai Georges Pompidou
+                    <br />
+                    34280 La Grande-Motte
+                    <br />
+                    France
                   </Typography>
                 </Grid>
               </Grid>

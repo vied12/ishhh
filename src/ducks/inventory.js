@@ -2,12 +2,10 @@ import { createAction } from 'redux-actions'
 import fetchRetry from 'fetch-retry'
 import { csvParse } from 'd3-dsv'
 import { catalog } from 'pictures'
-
 const SET_DATA = 'ishhh/inventory/SET_DATA'
 
 const initialState = {
-  2017: [],
-  2018: [
+  data: [
     {
       key: 'KIM_DUCK_BLUE',
       front: catalog.KIM_DUCK_BLUE_1,
@@ -71,6 +69,52 @@ const initialState = {
       back: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_3,
       detail: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_2,
     },
+    // 2017
+    {
+      key: 'DRESS_ORANGE',
+      name: 'DRESS ORANGE',
+      description:
+        'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
+      front: catalog.FB_ROBE_ORANGE,
+      detail: catalog.DSC_0040,
+      back: catalog.DSC_0061,
+    },
+    {
+      key: 'DRESS_SAFFRON',
+      name: 'DRESS SAFFRON',
+      description:
+        'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
+      front: catalog.FB_ROBE_SAFRAN,
+      detail: catalog.DSC_0050,
+      back: catalog.DSC_0051,
+    },
+    {
+      key: 'DRESS_TURQUOISE',
+      name: 'DRESS TURQUOISE',
+      description:
+        'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
+      front: catalog.FB_ROBE_TURQUOISE,
+      detail: catalog.DSC_0026,
+      back: catalog.DSC_0030,
+    },
+    {
+      key: 'DRESS_WHITE',
+      name: 'DRESS WHITE',
+      description:
+        'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
+      front: catalog.FB_ROBE_BLANCHE,
+      detail: catalog.DSC_0015,
+      back: catalog.DSC_0014,
+    },
+    {
+      key: 'DRESS_BLUE',
+      name: 'DRESS BLUE',
+      description:
+        'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
+      front: catalog.FB_ROBE_BLEUE,
+      detail: catalog.DSC_0021,
+      back: catalog.DSC_0023,
+    },
   ],
 }
 export default (state = initialState, action) => {
@@ -78,7 +122,7 @@ export default (state = initialState, action) => {
     case SET_DATA:
       return {
         ...state,
-        2018: action.payload[2018],
+        data: action.payload,
       }
     default:
       return state
@@ -91,7 +135,6 @@ const CLOTHES_SIZES = ['X/S', 'S/M', 'M/L', 'S', 'M', 'L']
 
 const url =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4cjno_FGVDQBU2NFRVD3w4XpeawrCIRuTNg6ca3IqdiyvsR1XiqO_3johaw1x1CR27Qd9nhUE4W7Y/pub?output=csv'
-// 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ8lPXBdXzUgoV_HWv_b70gbKfjdRMFCzkR4rRhzPjMHqM7OeXERsVi9NZyRMMOJlCojUqGdf1oJ0Uf/pub?output=csv'
 
 export const fetchData = () => (dispatch, getState) => {
   return fetchRetry(url, {
@@ -100,19 +143,15 @@ export const fetchData = () => (dispatch, getState) => {
   })
     .then(d => d.text())
     .then(d => {
-      const initialData = getState().inventory[2018]
       const inventory = csvParse(d)
-      const data2018 = initialData.map(d => ({
-        // const data2018 = inventory.filter(d => d.COLLECTION === '2018').map(d => ({
-        ...d,
-        ...inventory.find(p => p.key === d.key),
-        sizes: CLOTHES_SIZES.filter(s => d[s] > 0),
-      }))
-      const data2017 = inventory
-        .filter(d => d.COLLECTION === '2017')
-        .map(d => ({
-          ...d,
-        }))
-      dispatch(setData({ 2018: data2018, 2017: data2017 }))
+      dispatch(
+        setData(
+          getState().inventory.data.map(d => ({
+            ...d,
+            ...inventory.find(p => p.key === d.key),
+            sizes: CLOTHES_SIZES.filter(s => d[s] > 0),
+          })),
+        ),
+      )
     })
 }

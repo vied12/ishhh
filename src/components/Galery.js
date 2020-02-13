@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import withWidth from '@material-ui/core/withWidth'
 import Typography from '@material-ui/core/Typography'
@@ -8,7 +8,7 @@ import classNames from 'classnames'
 import { Link } from 'react-router-dom'
 import LazyLoad from 'react-lazyload'
 import ShopIcon from '@material-ui/icons/ShoppingBasket'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import compose from 'recompose/compose'
 
 const styles = theme => ({
@@ -92,18 +92,21 @@ const SIZES = {
   xl: 6,
 }
 
-class Galery extends Component {
-  getSizes = key => {
-    const item = this.props.inventory.find(d => d.key === key)
+const Galery = ({ classes, width }) => {
+  const inventory = useSelector(state => state.inventory.data)
+  const getSizes = key => {
+    const item = inventory.find(d => d.key === key)
+    if (!item.sizes) {
+      return []
+    }
     return item && item.sizes.length > 0 ? item.sizes : ['SOLD OUT']
   }
 
-  render() {
-    const { classes, width, inventory } = this.props
-
-    return (
-      <div className={classes.root}>
-        {inventory.filter(d => !!d.key).map((d, i) => (
+  return (
+    <div className={classes.root}>
+      {inventory
+        .filter(d => !!d.key)
+        .map((d, i) => (
           <Link
             to={`/${d.key}`}
             key={i}
@@ -125,7 +128,7 @@ class Galery extends Component {
                 >
                   <Typography>{d.price}&nbsp;€</Typography>
                   <ShopIcon className={classes.shopIcon} />
-                  {this.getSizes(d.key).map(s => (
+                  {getSizes(d.key).map(s => (
                     <Chip key={s} label={s} style={{ marginRight: 10 }} />
                   ))}
                 </div>
@@ -133,29 +136,22 @@ class Galery extends Component {
             </div>
           </Link>
         ))}
-        <div
-          className={[classes.gridItem, classes.title].join(' ')}
-          style={{ width: `${100 / SIZES[width]}%` }}
+      <div
+        className={[classes.gridItem, classes.title].join(' ')}
+        style={{ width: `${100 / SIZES[width]}%` }}
+      >
+        <Button
+          color="primary"
+          variant="contained"
+          target="_blank"
+          rel="nofollow noreferrer noopener"
+          href="https://m.me/ishhhliebedich"
         >
-          <Button
-            color="primary"
-            variant="contained"
-            target="_blank"
-            rel="nofollow noreferrer noopener"
-            href="https://m.me/ishhhliebedich"
-          >
-            Contact Me
-          </Button>
-        </div>
+          Contact Me
+        </Button>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-export default compose(
-  withWidth(),
-  withStyles(styles),
-  connect(state => ({
-    inventory: state.inventory[2018],
-  })),
-)(Galery)
+export default compose(withWidth(), withStyles(styles))(Galery)

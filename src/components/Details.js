@@ -87,22 +87,6 @@ class Details extends Component {
     chosenRegion: '',
   }
 
-  // componentWillMount() {
-  //   this.getData()
-  // }
-
-  // componentWillReceiveProps() {
-  //   this.getData()
-  // }
-
-  // getData() {
-  //   getData().then(d =>
-  //     this.setState({
-  //       item: d.find(d => d.key === this.props.match.params.key),
-  //     }),
-  //   )
-  // }
-
   handleToken = token => {
     const { item } = this.props
     const { chosenSize } = this.state
@@ -223,8 +207,10 @@ class Details extends Component {
           )}
         </Typography>
         <Typography variant="caption" style={{ padding: 20 }}>
-          We do not store your credit card information.<br />
-          We instead rely on the secure third-party payment processor Stripe.<br />
+          We do not store your credit card information.
+          <br />
+          We instead rely on the secure third-party payment processor Stripe.
+          <br />
           You may also want to read Stripe's privacy policy:{' '}
           <a
             href="https://stripe.com/us/privacy"
@@ -245,7 +231,8 @@ class Details extends Component {
             Estimated shipping times
           </Typography>
           <Typography gutterBottom>
-            Europe: 3-6 business days<br />
+            Europe: 3-6 business days
+            <br />
             I'll do my best to meet these shipping estimates, but can't
             guarantee them.
           </Typography>
@@ -262,8 +249,10 @@ class Details extends Component {
             I accept returns, exchanges and cancellations
           </Typography>
           <Typography gutterBottom>
-            Contact me within: 24 hours of delivery<br />
-            Ship items back within: 7 days of delivery<br />
+            Contact me within: 24 hours of delivery
+            <br />
+            Ship items back within: 7 days of delivery
+            <br />
             Request a cancellation within: 12 hours of purchase
           </Typography>
 
@@ -306,6 +295,6 @@ class Details extends Component {
 export default compose(
   withStyles(styles),
   connect((state, { match }) => ({
-    item: state.inventory[2018].find(d => d.key === match.params.key),
+    item: state.inventory.data.find(d => d.key === match.params.key),
   })),
 )(Details)

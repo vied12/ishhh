@@ -72,6 +72,23 @@ import MG_3438 from 'pictures/2017/MG_3438.jpg'
 import MG_3518 from 'pictures/2017/MG_3518.jpg'
 import MG_3560 from 'pictures/2017/MG_3560.jpg'
 
+// galery 2017
+import DSC_0014 from 'pictures/galery2017/DSC_0014.jpg'
+import DSC_0015 from 'pictures/galery2017/DSC_0015.jpg'
+import DSC_0021 from 'pictures/galery2017/DSC_0021.jpg'
+import DSC_0023 from 'pictures/galery2017/DSC_0023.jpg'
+import DSC_0026 from 'pictures/galery2017/DSC_0026.jpg'
+import DSC_0030 from 'pictures/galery2017/DSC_0030.jpg'
+import DSC_0040 from 'pictures/galery2017/DSC_0040.jpg'
+import DSC_0050 from 'pictures/galery2017/DSC_0050.jpg'
+import DSC_0051 from 'pictures/galery2017/DSC_0051.jpg'
+import DSC_0061 from 'pictures/galery2017/DSC_0061.jpg'
+import FB_ROBE_BLANCHE from 'pictures/galery2017/Fb-Robe-blanche.jpg'
+import FB_ROBE_BLEUE from 'pictures/galery2017/Fb_robe_bleue.jpg'
+import FB_ROBE_ORANGE from 'pictures/galery2017/Fb_robe_orange.jpg'
+import FB_ROBE_SAFRAN from 'pictures/galery2017/Fb_robe_safran.jpg'
+import FB_ROBE_TURQUOISE from 'pictures/galery2017/Fb-Robe_turquoise.jpg'
+
 export const pictures = [
   IMG_4967,
   IMG_4948,
@@ -141,6 +158,22 @@ export const catalog = {
   CUSTOMIZED_JEAN_JACKET_GREEN_3,
   CUSTOMIZED_JEAN_JACKET_GREEN_2,
   CUSTOMIZED_JEAN_JACKET_GREEN_1,
+  // 2017
+  DSC_0014,
+  DSC_0015,
+  DSC_0021,
+  DSC_0023,
+  DSC_0026,
+  DSC_0030,
+  DSC_0040,
+  DSC_0050,
+  DSC_0051,
+  DSC_0061,
+  FB_ROBE_BLANCHE,
+  FB_ROBE_BLEUE,
+  FB_ROBE_ORANGE,
+  FB_ROBE_SAFRAN,
+  FB_ROBE_TURQUOISE,
 }
 
 export const selection = [
