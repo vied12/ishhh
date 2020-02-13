@@ -10,11 +10,11 @@ export default class CrossfadeImage extends Component {
       bottomSrc: props.src,
     }
   }
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     const oldSrc = this.state.topSrc
     const newSrc = newProps.src
     if (newSrc !== oldSrc) {
-      new Promise((resolve, reject) => {
+      new Promise((resolve) => {
         if (newProps.loadBefore) {
           const img = new Image()
           img.src = newSrc
@@ -51,6 +51,7 @@ export default class CrossfadeImage extends Component {
       style,
       imgStyle,
       alt,
+      // eslint-disable-next-line no-unused-vars
       loadBefore,
       ...props
     } = this.props

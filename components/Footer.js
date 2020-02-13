@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from 'images/ishhh-NB-MD.png'
-import { Link } from 'react-router-dom'
+import logo from '../images/ishhh-NB-MD.png'
+import Link from 'next/link'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
@@ -20,7 +20,7 @@ const styles = theme => ({
 })
 const Footer = ({ classes }) => (
   <div className={classes.root}>
-    <Link to="/" component="div">
+    <Link href="/">
       <img src={logo} width={150} alt="ISHHH logo" />
     </Link>
     <Typography variant="body2" className={classes.credits}>
@@ -53,9 +53,11 @@ const Footer = ({ classes }) => (
       </a>
       <br />
     </Typography>
-    <Button component={Link} to="/impressum">
+    <Link passHref href="/impressum">
+    <Button>
       Impressum
     </Button>
+    </Link>
   </div>
 )
 

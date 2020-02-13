@@ -1,8 +1,8 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import CrossfadeImage from 'components/CrossfadeImage'
-import { pictures } from 'pictures'
-import logo from 'images/ishhh-NB-MD.png'
+import CrossfadeImage from './CrossfadeImage'
+import { pictures } from '../pictures'
+import logo from '../images/ishhh-NB-MD.png'
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import Button from '@material-ui/core/Button'
 
@@ -10,7 +10,7 @@ const goDownAnimationId =
   'goDownAnimationId' + Math.floor(Math.random() * Math.pow(10, 10))
 const rotateId = 'rotateId' + Math.floor(Math.random() * Math.pow(10, 10))
 
-const styles = theme => ({
+const styles = () => ({
   root: {
     boxSizing: 'border-box',
     position: 'relative',
@@ -75,13 +75,15 @@ const waitForImage = src =>
 class Header extends React.Component {
   state = {
     imageIndex: 0,
-    height: 0,
+    height: 100,
   }
 
   promise = Promise.resolve()
 
   componentDidMount = () => {
     this.startTimeout()
+    window.addEventListener('resize', this.setHeight)
+    this.setHeight()
   }
 
   nextImage = () => {
@@ -117,20 +119,15 @@ class Header extends React.Component {
   }
 
   scrollDown = () => {
-    window.scroll({
+    process.browser && window.scroll({
       top: window.innerHeight - 50,
       left: 0,
       behavior: 'smooth',
     })
   }
 
-  componentWillMount = () => {
-    window.addEventListener('resize', this.setHeight)
-    this.setHeight()
-  }
-
   componentWillUnmount = () => {
-    window.removeEventListener('resize', this.setHeight)
+    process.browser && window.removeEventListener('resize', this.setHeight)
   }
 
   setHeight = () => {

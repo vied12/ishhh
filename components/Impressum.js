@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Footer from 'components/Footer'
+import Footer from './Footer'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
@@ -16,12 +16,12 @@ class Impressum extends Component {
     const { classes } = this.props
     return (
       <div className={classes.root}>
-        <Typography gutterBottom variant="display3">
+        <Typography gutterBottom variant="h3">
           Impressum
         </Typography>
         <Typography gutterBottom>ISHHH</Typography>
         <Typography gutterBottom>Mail: contact (at) ishhh.de</Typography>
-        <Typography gutterBottom variant="display1">
+        <Typography gutterBottom variant="h4">
           Liability for Content
         </Typography>
         <Typography gutterBottom>
@@ -37,7 +37,7 @@ class Impressum extends Component {
           a specific infringement. Upon notification of such violations, we will
           remove the content immediately.
         </Typography>
-        <Typography gutterBottom variant="display1">
+        <Typography gutterBottom variant="h4">
           Liability for Links
         </Typography>
         <Typography gutterBottom>
@@ -51,7 +51,7 @@ class Impressum extends Component {
           Upon notification of violations, we will immediately remove such
           links.
         </Typography>
-        <Typography gutterBottom variant="display1">
+        <Typography gutterBottom variant="h4">
           Copyright
         </Typography>
         <Typography gutterBottom>

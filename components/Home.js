@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import Footer from 'components/Footer'
-import Header from 'components/Header'
-import AboutMe from 'components/AboutMe'
-import Galery from 'components/Galery'
+import Footer from './Footer'
+import Header from './Header'
+import AboutMe from './AboutMe'
+import Galery from './Galery'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
-import shopImg from 'images/boutique-hanlaure.jpeg'
-import meImg from 'images/me.jpg'
+import meImg from '../images/me.jpg'
 import classNames from 'classnames'
 
 const styles = {
@@ -48,7 +47,7 @@ class Home extends Component {
         <div
           className={classNames(classes.containerWithMargin, classes.introText)}
         >
-          <Typography variant="display3" gutterBottom>
+          <Typography variant="h3" gutterBottom>
             Welcome to ishhh Shop
           </Typography>
           <Typography gutterBottom>
@@ -70,32 +69,12 @@ class Home extends Component {
           className={classes.containerWithMargin}
           style={{ textAlign: 'left' }}
         >
-          <Grid container spacing={40} style={{}}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="display3" gutterBottom>
-                Find me
-              </Typography>
-              <Grid container spacing={40} style={{}}>
-                <Grid item xs={12} md={5}>
-                  <img width="100%" src={shopImg} alt="Shop" />
-                </Grid>
-                <Grid item xs={12} md={7}>
-                  <Typography style={{ fontWeight: 400 }}>Han'Laure</Typography>
-                  <Typography>
-                    430 Quai Georges Pompidou
-                    <br />
-                    34280 La Grande-Motte
-                    <br />
-                    France
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="display3" gutterBottom>
+          <Grid container spacing={10} style={{}}>
+            <Grid item xs={12} md={9}>
+              <Typography variant="h4" gutterBottom>
                 About me
               </Typography>
-              <Grid container spacing={40}>
+              <Grid container spacing={10}>
                 <Grid item xs={12} md={5}>
                   <img
                     alt="The creator, Carmen, in Inda"

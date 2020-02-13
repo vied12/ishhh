@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import Footer from 'components/Footer'
-import Galery from 'components/Galery'
+import Footer from './Footer'
+import Galery from './Galery'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import logo from 'images/ishhh-NB-MD.png'
-import { Link } from 'react-router-dom'
+import logo from '../images/ishhh-NB-MD.png'
+import Link from 'next/link'
 import StripeCheckout from 'react-stripe-checkout'
-import history from 'utils/history'
-import Selector from 'components/Selector'
+import Selector from './Selector'
 import { connect } from 'react-redux'
 import compose from 'recompose/compose'
+import Router from 'next/router'
 
 const REGIONS = {
   Germany: 5,
@@ -62,6 +62,7 @@ const styles = theme => ({
     },
   },
   title: {
+    marginTop: 40,
     marginBottom: 40,
   },
   cgv: {
@@ -106,7 +107,7 @@ class Details extends Component {
       },
     ).then(d => {
       if (d.ok) {
-        history.push('/payment-successful')
+        Router.push('/payment-successful')
       } else {
         d.text().then(text => {
           this.setState({ error: text })
@@ -128,12 +129,12 @@ class Details extends Component {
     const shippingPrice = this.getShippingPrice()
     return (
       <div className={classes.root}>
-        <Link to="/" className={classes.logoContainer}>
+        <Link href="/" className={classes.logoContainer}>
           <img src={logo} alt="ISHHH" className={classes.logo} />
         </Link>
         {!!error && (
           <div style={{ margin: 80 }}>
-            <Typography variant="display2" color="error">
+            <Typography variant="h2" color="error">
               Sorry, an error occured.
             </Typography>
             <Typography>{error}</Typography>
@@ -143,7 +144,7 @@ class Details extends Component {
             </Typography>
           </div>
         )}
-        <Typography variant="display3" className={classes.title} gutterBottom>
+        <Typography variant="h5" className={classes.title} gutterBottom>
           {item.name}
         </Typography>
         <div className={classes.images}>
@@ -154,7 +155,7 @@ class Details extends Component {
             <img src={item.back} alt="back" />
           </div>
         </div>
-        <Typography variant="display3" gutterBottom>
+        <Typography variant="h4" gutterBottom>
           Buy online
         </Typography>
         {item.description &&
@@ -197,7 +198,7 @@ class Details extends Component {
             Order now
           </Button>
         </StripeCheckout>
-        <Typography variant="display2">{item.price} €</Typography>
+        <Typography variant="h4">{item.price} €</Typography>
         <Typography>
           Shipping:{' '}
           {shippingPrice ? (
@@ -222,12 +223,12 @@ class Details extends Component {
           </a>
         </Typography>
         <div className={classes.cgv}>
-          <Typography gutterBottom variant="title">
+          <Typography gutterBottom variant="h5">
             Processing time
           </Typography>
           <Typography gutterBottom>1-3 business days</Typography>
 
-          <Typography gutterBottom variant="title">
+          <Typography gutterBottom variant="h5">
             Estimated shipping times
           </Typography>
           <Typography gutterBottom>
@@ -237,7 +238,7 @@ class Details extends Component {
             guarantee them.
           </Typography>
 
-          <Typography gutterBottom variant="title">
+          <Typography gutterBottom variant="h5">
             Customs and import taxes
           </Typography>
           <Typography gutterBottom>
@@ -245,7 +246,7 @@ class Details extends Component {
             apply. I'm not responsible for delays due to customs.
           </Typography>
 
-          <Typography gutterBottom variant="title">
+          <Typography gutterBottom variant="h5">
             I accept returns, exchanges and cancellations
           </Typography>
           <Typography gutterBottom>
@@ -256,7 +257,7 @@ class Details extends Component {
             Request a cancellation within: 12 hours of purchase
           </Typography>
 
-          <Typography gutterBottom variant="title">
+          <Typography gutterBottom variant="h5">
             Conditions of return
           </Typography>
           <Typography gutterBottom>
@@ -265,7 +266,7 @@ class Details extends Component {
             loss in value.
           </Typography>
 
-          <Typography gutterBottom variant="title">
+          <Typography gutterBottom variant="h5">
             Questions about your order?
           </Typography>
           <Typography gutterBottom>
@@ -282,7 +283,7 @@ class Details extends Component {
             if you have any problems with your order.
           </Typography>
         </div>
-        <Typography variant="display3" gutterBottom style={{ marginTop: 200 }}>
+        <Typography variant="h4" gutterBottom style={{ marginTop: 200 }}>
           Others clothes available
         </Typography>
         <Galery />
@@ -294,7 +295,7 @@ class Details extends Component {
 
 export default compose(
   withStyles(styles),
-  connect((state, { match }) => ({
-    item: state.inventory.data.find(d => d.key === match.params.key),
+  connect((state, { itemId }) => ({
+    item: state.inventory.data.find(d => d.key === itemId),
   })),
 )(Details)

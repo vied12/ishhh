@@ -1,9 +1,9 @@
 import React from 'react'
-import Fontawesome from 'react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
-import EtsyIcon from 'components/EtsyIcon'
+import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
 const styles = {
   icon: {
@@ -25,7 +25,8 @@ const AboutMe = ({ classes }) => (
         target="_blank"
         rel="nofollow noreferrer"
       >
-        <Fontawesome name="instagram" size="2x" className={classes.icon} />
+        <FontAwesomeIcon         icon={faInstagram}
+ size="2x" className={classes.icon} />
         carmenspella
       </Button>
       <Button
@@ -33,23 +34,12 @@ const AboutMe = ({ classes }) => (
         target="_blank"
         rel="nofollow noreferrer"
       >
-        <Fontawesome
-          name="facebook-official"
+        <FontAwesomeIcon
+        icon={faFacebook}
           size="2x"
           className={classes.icon}
         />
         Ishhhliebedich
-      </Button>
-      <Button
-        href="https://www.etsy.com/shop/ISHHH"
-        target="_blank"
-        rel="nofollow noreferrer"
-      >
-        <EtsyIcon
-          className={classes.icon}
-          style={{ position: 'relative', left: -3 }}
-        />
-        Etsy Shop
       </Button>
     </p>
   </div>

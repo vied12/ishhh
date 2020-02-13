@@ -1,7 +1,7 @@
 import { createAction } from 'redux-actions'
 import fetchRetry from 'fetch-retry'
 import { csvParse } from 'd3-dsv'
-import { catalog } from 'pictures'
+import { catalog } from '../pictures'
 const SET_DATA = 'ishhh/inventory/SET_DATA'
 
 const initialState = {
@@ -137,7 +137,7 @@ const url =
   'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ4cjno_FGVDQBU2NFRVD3w4XpeawrCIRuTNg6ca3IqdiyvsR1XiqO_3johaw1x1CR27Qd9nhUE4W7Y/pub?output=csv'
 
 export const fetchData = () => (dispatch, getState) => {
-  return fetchRetry(url, {
+      return fetchRetry(url, {
     retries: 10,
     retryDelay: 500,
   })

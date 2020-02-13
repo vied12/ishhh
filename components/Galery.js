@@ -5,11 +5,12 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Chip from '@material-ui/core/Chip'
 import classNames from 'classnames'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import LazyLoad from 'react-lazyload'
 import ShopIcon from '@material-ui/icons/ShoppingBasket'
 import { useSelector } from 'react-redux'
 import compose from 'recompose/compose'
+import {fontTitle } from '../config/theme'
 
 const styles = theme => ({
   root: {
@@ -69,7 +70,7 @@ const styles = theme => ({
     overflow: 'unset',
     '& > *': {
       width: '100%',
-      fontFamily: "'Amatic SC', cursive",
+      fontFamily: fontTitle,
       height: '100%',
       fontSize: '2.5rem',
       '&:hover': {
@@ -108,11 +109,14 @@ const Galery = ({ classes, width }) => {
         .filter(d => !!d.key)
         .map((d, i) => (
           <Link
-            to={`/${d.key}`}
+            href={`/details/[pid]`}
+            as={`/details/${d.key}`}
             key={i}
+            >
+            <a
             className={classes.gridItem}
             style={{ width: `${100 / SIZES[width]}%` }}
-          >
+            >
             <LazyLoad once offset={500} height="100%">
               <img src={d.front} alt={d.name} />
             </LazyLoad>
@@ -134,6 +138,7 @@ const Galery = ({ classes, width }) => {
                 </div>
               )}
             </div>
+            </a>
           </Link>
         ))}
       <div
