@@ -72,7 +72,7 @@ class Home extends Component {
           <Grid container spacing={10} style={{}}>
             <Grid item xs={12} md={9}>
               <Typography variant="h4" gutterBottom>
-                About me
+                About Ishhh
               </Typography>
               <Grid container spacing={10}>
                 <Grid item xs={12} md={5}>

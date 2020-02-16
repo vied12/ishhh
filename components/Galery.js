@@ -146,7 +146,6 @@ const Galery = ({ classes, width }) => {
         style={{ width: `${100 / SIZES[width]}%` }}
       >
         <Button
-          color="primary"
           variant="contained"
           target="_blank"
           rel="nofollow noreferrer noopener"

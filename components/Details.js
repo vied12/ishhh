@@ -189,7 +189,7 @@ class Details extends Component {
           disabled={!chosenSize || !chosenRegion}
         >
           <Button
-            variant="raised"
+            variant="contained"
             color="primary"
             size="large"
             style={{ margin: 40 }}

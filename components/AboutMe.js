@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Box from '@material-ui/core/Box'
 import { withStyles } from '@material-ui/core/styles'
 import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
 
@@ -12,7 +13,7 @@ const styles = {
 }
 
 const AboutMe = ({ classes }) => (
-  <div>
+  <Box>
     <Typography style={{ maxWidth: 600 }}>
       I find my inspiration in indian garment: elegant sarees, rich patterns,
       colorful fabrics and gold jewelry. I enjoy the contrast between urban and
@@ -42,7 +43,7 @@ const AboutMe = ({ classes }) => (
         Ishhhliebedich
       </Button>
     </p>
-  </div>
+  </Box>
 )
 
 export default withStyles(styles)(AboutMe)

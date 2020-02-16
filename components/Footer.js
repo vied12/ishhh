@@ -24,23 +24,23 @@ const Footer = ({ classes }) => (
       <img src={logo} width={150} alt="ISHHH logo" />
     </Link>
     <Typography variant="body2" className={classes.credits}>
-      Dress designer:{' '}
+      Pattern Maker:{' '}
       <a href="mailto:loicxgros@gmail.com" rel="nofollow noreferrer noopener">
         Loïc&nbsp;Gros
       </a>
       <br />
-      Graphic identity:{' '}
+      Graphic Identity:{' '}
       <a href="http://www.juliaze.com" rel="nofollow noreferrer noopener">
         Julia&nbsp;Zé
       </a>
       <br />
-      Model:{' '}
+      Models:{' '}
       <a
         href="https://www.instagram.com/technopussi"
         rel="nofollow noreferrer noopener"
       >
         Nikki
-      </a>
+      </a>, Adèle Chénez
       <br />
       Hair & Make-up artist:{' '}
       <a href="http://adrianametzlaff.de" rel="nofollow noreferrer noopener">

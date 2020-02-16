@@ -12,20 +12,19 @@ const initialState = {
       back: catalog.KIM_DUCK_BLUE_2,
     },
     {
-      key: 'KIM_SKY_BLUEGOLD',
-      front: catalog.KIM_SKY_BLUEGOLD_1,
-      back: catalog.KIM_SKY_BLUEGOLD_2,
+      key: 'KIM_YELLOW',
+      front: catalog.KIM_YELLOW_1,
+      back: catalog.KIM_YELLOW_2,
     },
-
     {
       key: 'KIM_WHITE',
       front: catalog.KIM_WHITE_1,
       back: catalog.KIM_WHITE_2,
     },
     {
-      key: 'KIM_YELLOW',
-      front: catalog.KIM_YELLOW_1,
-      back: catalog.KIM_YELLOW_2,
+      key: 'KIM_SKY_BLUEGOLD',
+      front: catalog.KIM_SKY_BLUEGOLD_1,
+      back: catalog.KIM_SKY_BLUEGOLD_2,
     },
     {
       key: 'LEVIS_GOLD',
@@ -37,22 +36,21 @@ const initialState = {
       front: catalog.LEVIS_PURPLE_1,
       back: catalog.LEVIS_PURPLE_2,
     },
-    {
-      key: 'KIM_SAREE_SWEET_RED',
-      front: catalog.KIM_SAREE_SWEET_RED_1,
-      back: catalog.KIM_SAREE_SWEET_RED_2,
-    },
-    {
-      key: 'KIM_SAREE_IVORY',
-      front: catalog.KIM_SAREE_IVORY_1,
-      back: catalog.KIM_SAREE_IVORY_2,
-    },
-    {
-      key: 'KIM_SWEET_GREEN_AND_CO',
-      front: catalog.KIM_SWEET_GREEN_AND_CO_1,
-      back: catalog.KIM_SWEET_GREEN_AND_CO_2,
-    },
-
+    // {
+    //   key: 'KIM_SAREE_SWEET_RED',
+    //   front: catalog.KIM_SAREE_SWEET_RED_1,
+    //   back: catalog.KIM_SAREE_SWEET_RED_2,
+    // },
+    // {
+    //   key: 'KIM_SAREE_IVORY',
+    //   front: catalog.KIM_SAREE_IVORY_1,
+    //   back: catalog.KIM_SAREE_IVORY_2,
+    // },
+    // {
+    //   key: 'KIM_SWEET_GREEN_AND_CO',
+    //   front: catalog.KIM_SWEET_GREEN_AND_CO_1,
+    //   back: catalog.KIM_SWEET_GREEN_AND_CO_2,
+    // },
     {
       key: 'JEAN_ORANGEBLUE',
       front: catalog.JEAN_ORANGEBLUE_1,

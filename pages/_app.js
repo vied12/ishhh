@@ -27,13 +27,13 @@ class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
+    <link rel="shortcut icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="theme-color" content="tomato"/>
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:url" content="%PUBLIC_URL%" />
     <meta property="og:title" content="ISHHH | Original clothes collection | Indian &amp; French Inspirations" />
     <meta property="og:description" content="Colourful tops &amp; jackets made with Indian fabrics. Created by a French Designer" />
-    <meta property="og:image" content="%PUBLIC_URL%/og.jpg" />
+    <meta property="og:image" content="/og.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <title>ISHHH | Original clothes collection | Indian &amp; French Inspirations</title>
