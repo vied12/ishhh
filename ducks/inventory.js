@@ -10,31 +10,37 @@ const initialState = {
       key: 'KIM_DUCK_BLUE',
       front: catalog.KIM_DUCK_BLUE_1,
       back: catalog.KIM_DUCK_BLUE_2,
+      "name": "JODHPUR KIMONO",
     },
     {
       key: 'KIM_YELLOW',
       front: catalog.KIM_YELLOW_1,
       back: catalog.KIM_YELLOW_2,
+      "name": "JAISALMER KIMONO",
     },
     {
       key: 'KIM_WHITE',
       front: catalog.KIM_WHITE_1,
       back: catalog.KIM_WHITE_2,
+      "name": "PONDICHERY KIMONO",
     },
     {
       key: 'KIM_SKY_BLUEGOLD',
       front: catalog.KIM_SKY_BLUEGOLD_1,
       back: catalog.KIM_SKY_BLUEGOLD_2,
+      "name": "AGRA KIMONO",
     },
     {
       key: 'LEVIS_GOLD',
       front: catalog.LEVIS_GOLD_1,
       back: catalog.LEVIS_GOLD_2,
+      "name": "CUSTOMIZED LEVIS JEAN JACKET",
     },
     {
       key: 'LEVIS_PURPLE',
       front: catalog.LEVIS_PURPLE_1,
       back: catalog.LEVIS_PURPLE_2,
+      "name": "CUSTOMIZED LEVIS JEAN JACKET",
     },
     // {
     //   key: 'KIM_SAREE_SWEET_RED',
@@ -55,22 +61,25 @@ const initialState = {
       key: 'JEAN_ORANGEBLUE',
       front: catalog.JEAN_ORANGEBLUE_1,
       back: catalog.JEAN_ORANGEBLUE_2,
+      "name": "CUSTOMIZED JEAN JACKET",
     },
     {
       key: 'JEAN_PINK',
       front: catalog.JEAN_PINK_1,
       back: catalog.JEAN_PINK_2,
+      "name": "CUSTOMIZED JEAN JACKET",
     },
     {
       key: 'CUSTOMIZED_JEAN_JACKET_GREEN',
       front: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_1,
       back: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_3,
       detail: catalog.CUSTOMIZED_JEAN_JACKET_GREEN_2,
+      "name": "CUSTOMIZED LEVIS JEAN JACKET",
     },
     // 2017
     {
       key: 'DRESS_ORANGE',
-      name: 'DRESS ORANGE',
+      "name": "JAISALMER DRESS",
       description:
         'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
       front: catalog.FB_ROBE_ORANGE,
@@ -79,7 +88,7 @@ const initialState = {
     },
     {
       key: 'DRESS_SAFFRON',
-      name: 'DRESS SAFFRON',
+      "name": "DEHLI DRESS",
       description:
         'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
       front: catalog.FB_ROBE_SAFRAN,
@@ -88,7 +97,7 @@ const initialState = {
     },
     {
       key: 'DRESS_TURQUOISE',
-      name: 'DRESS TURQUOISE',
+      "name": "PUSHKAR DRESS",
       description:
         'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
       front: catalog.FB_ROBE_TURQUOISE,
@@ -97,7 +106,7 @@ const initialState = {
     },
     {
       key: 'DRESS_WHITE',
-      name: 'DRESS WHITE',
+      "name": "AMRITSAR DRESS",
       description:
         'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
       front: catalog.FB_ROBE_BLANCHE,
@@ -106,7 +115,7 @@ const initialState = {
     },
     {
       key: 'DRESS_BLUE',
-      name: 'DRESS BLUE',
+      "name": "JODHPUR DRESS",
       description:
         'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
       front: catalog.FB_ROBE_BLEUE,
