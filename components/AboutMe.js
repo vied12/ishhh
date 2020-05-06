@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'
 import { withStyles } from '@material-ui/core/styles'
 import { faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 
 const styles = {
   icon: {
@@ -21,6 +22,14 @@ const AboutMe = ({ classes }) => (
       fashion and mixing contemporary designs with authentic indian fabrics.
     </Typography>
     <p className="follow-us">
+    <Button
+        href="https://carmen.ishhh.de"
+        target="_blank"
+        rel="nofollow noreferrer"
+      >
+        <AccountCircleIcon style={{width: 32, height: 32}} className={classes.icon} />
+        carmen.ishhh.de
+      </Button>
       <Button
         href="https://www.instagram.com/carmenspella/"
         target="_blank"
