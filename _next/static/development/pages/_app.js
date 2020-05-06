@@ -142,27 +142,33 @@ var initialState = {
   data: [{
     key: 'KIM_DUCK_BLUE',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_DUCK_BLUE_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_DUCK_BLUE_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_DUCK_BLUE_2,
+    "name": "JODHPUR KIMONO"
   }, {
     key: 'KIM_YELLOW',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_YELLOW_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_YELLOW_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_YELLOW_2,
+    "name": "JAISALMER KIMONO"
   }, {
     key: 'KIM_WHITE',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_WHITE_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_WHITE_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_WHITE_2,
+    "name": "PONDICHERY KIMONO"
   }, {
     key: 'KIM_SKY_BLUEGOLD',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_SKY_BLUEGOLD_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_SKY_BLUEGOLD_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].KIM_SKY_BLUEGOLD_2,
+    "name": "AGRA KIMONO"
   }, {
     key: 'LEVIS_GOLD',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].LEVIS_GOLD_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].LEVIS_GOLD_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].LEVIS_GOLD_2,
+    "name": "CUSTOMIZED LEVIS JEAN JACKET"
   }, {
     key: 'LEVIS_PURPLE',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].LEVIS_PURPLE_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].LEVIS_PURPLE_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].LEVIS_PURPLE_2,
+    "name": "CUSTOMIZED LEVIS JEAN JACKET"
   }, // {
   //   key: 'KIM_SAREE_SWEET_RED',
   //   front: catalog.KIM_SAREE_SWEET_RED_1,
@@ -181,48 +187,51 @@ var initialState = {
   {
     key: 'JEAN_ORANGEBLUE',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].JEAN_ORANGEBLUE_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].JEAN_ORANGEBLUE_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].JEAN_ORANGEBLUE_2,
+    "name": "CUSTOMIZED JEAN JACKET"
   }, {
     key: 'JEAN_PINK',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].JEAN_PINK_1,
-    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].JEAN_PINK_2
+    back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].JEAN_PINK_2,
+    "name": "CUSTOMIZED JEAN JACKET"
   }, {
     key: 'CUSTOMIZED_JEAN_JACKET_GREEN',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].CUSTOMIZED_JEAN_JACKET_GREEN_1,
     back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].CUSTOMIZED_JEAN_JACKET_GREEN_3,
-    detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].CUSTOMIZED_JEAN_JACKET_GREEN_2
+    detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].CUSTOMIZED_JEAN_JACKET_GREEN_2,
+    "name": "CUSTOMIZED LEVIS JEAN JACKET"
   }, // 2017
   {
     key: 'DRESS_ORANGE',
-    name: 'DRESS ORANGE',
+    "name": "JAISALMER DRESS",
     description: 'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].FB_ROBE_ORANGE,
     detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0040,
     back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0061
   }, {
     key: 'DRESS_SAFFRON',
-    name: 'DRESS SAFFRON',
+    "name": "DEHLI DRESS",
     description: 'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].FB_ROBE_SAFRAN,
     detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0050,
     back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0051
   }, {
     key: 'DRESS_TURQUOISE',
-    name: 'DRESS TURQUOISE',
+    "name": "PUSHKAR DRESS",
     description: 'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].FB_ROBE_TURQUOISE,
     detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0026,
     back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0030
   }, {
     key: 'DRESS_WHITE',
-    name: 'DRESS WHITE',
+    "name": "AMRITSAR DRESS",
     description: 'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].FB_ROBE_BLANCHE,
     detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0015,
     back: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0014
   }, {
     key: 'DRESS_BLUE',
-    name: 'DRESS BLUE',
+    "name": "JODHPUR DRESS",
     description: 'Indian fabric and embroidered border +  lining 100% cotton\nCold washing / Iron on reverse or with a cotton fabric between the iron and the indian fabric ',
     front: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].FB_ROBE_BLEUE,
     detail: _pictures__WEBPACK_IMPORTED_MODULE_10__["catalog"].DSC_0021,
@@ -5513,7 +5522,7 @@ var defaultTheme = Object(_createMuiTheme__WEBPACK_IMPORTED_MODULE_0__["default"
 /*!************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/styles/index.js ***!
   \************************************************************/
-/*! exports provided: hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, fade, darken, lighten, createMuiTheme, createStyles, makeStyles, responsiveFontSizes, styled, easing, duration, useTheme, withStyles, withTheme, createGenerateClassName, jssPreset, ServerStyleSheets, StylesProvider, MuiThemeProvider, ThemeProvider */
+/*! exports provided: createMuiTheme, createStyles, makeStyles, responsiveFontSizes, styled, useTheme, withStyles, withTheme, createGenerateClassName, jssPreset, ServerStyleSheets, StylesProvider, MuiThemeProvider, ThemeProvider, hexToRgb, rgbToHex, hslToRgb, decomposeColor, recomposeColor, getContrastRatio, getLuminance, emphasize, fade, darken, lighten, easing, duration */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
